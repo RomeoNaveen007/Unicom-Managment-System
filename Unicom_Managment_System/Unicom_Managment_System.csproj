@@ -59,9 +59,16 @@
     <Compile Include="Form\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\Batch.cs" />
     <Compile Include="Model\Course.cs" />
     <Compile Include="Model\Course_Subject.cs" />
+    <Compile Include="Model\Exam.cs" />
+    <Compile Include="Model\Lecturer.cs" />
+    <Compile Include="Model\Marks.cs" />
+    <Compile Include="Model\Room.cs" />
+    <Compile Include="Model\Student.cs" />
     <Compile Include="Model\Subject.cs" />
+    <Compile Include="Model\Timetable.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">

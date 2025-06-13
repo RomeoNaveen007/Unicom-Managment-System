@@ -3,32 +3,60 @@
   "WorkspaceRootPath": "C:\\Users\\UT010057\\Desktop\\pro\\Unicom-Managment-System\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{185922BE-10BC-4E16-A38C-11DBD1603D3D}|Unicom_Managment_System\\Unicom_Managment_System.csproj|c:\\users\\ut010057\\desktop\\pro\\unicom-managment-system\\unicom_managment_system\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{185922BE-10BC-4E16-A38C-11DBD1603D3D}|Unicom_Managment_System\\Unicom_Managment_System.csproj|solutionrelative:unicom_managment_system\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{185922BE-10BC-4E16-A38C-11DBD1603D3D}|Unicom_Managment_System\\Unicom_Managment_System.csproj|c:\\users\\ut010057\\desktop\\pro\\unicom-managment-system\\unicom_managment_system\\data\\migration\\createtable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{185922BE-10BC-4E16-A38C-11DBD1603D3D}|Unicom_Managment_System\\Unicom_Managment_System.csproj|C:\\Users\\UT010057\\Desktop\\pro\\Unicom-Managment-System\\unicom_managment_system\\data\\migration\\createtable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{185922BE-10BC-4E16-A38C-11DBD1603D3D}|Unicom_Managment_System\\Unicom_Managment_System.csproj|solutionrelative:unicom_managment_system\\data\\migration\\createtable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{185922BE-10BC-4E16-A38C-11DBD1603D3D}|Unicom_Managment_System\\Unicom_Managment_System.csproj|c:\\users\\ut010057\\desktop\\pro\\unicom-managment-system\\unicom_managment_system\\model\\course_subject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{185922BE-10BC-4E16-A38C-11DBD1603D3D}|Unicom_Managment_System\\Unicom_Managment_System.csproj|solutionrelative:unicom_managment_system\\model\\course_subject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{185922BE-10BC-4E16-A38C-11DBD1603D3D}|Unicom_Managment_System\\Unicom_Managment_System.csproj|c:\\users\\ut010057\\desktop\\pro\\unicom-managment-system\\unicom_managment_system\\model\\batch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{185922BE-10BC-4E16-A38C-11DBD1603D3D}|Unicom_Managment_System\\Unicom_Managment_System.csproj|solutionrelative:unicom_managment_system\\model\\batch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{185922BE-10BC-4E16-A38C-11DBD1603D3D}|Unicom_Managment_System\\Unicom_Managment_System.csproj|c:\\users\\ut010057\\desktop\\pro\\unicom-managment-system\\unicom_managment_system\\model\\subject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{185922BE-10BC-4E16-A38C-11DBD1603D3D}|Unicom_Managment_System\\Unicom_Managment_System.csproj|solutionrelative:unicom_managment_system\\model\\subject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{185922BE-10BC-4E16-A38C-11DBD1603D3D}|Unicom_Managment_System\\Unicom_Managment_System.csproj|c:\\users\\ut010057\\desktop\\pro\\unicom-managment-system\\unicom_managment_system\\model\\lecturer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{185922BE-10BC-4E16-A38C-11DBD1603D3D}|Unicom_Managment_System\\Unicom_Managment_System.csproj|solutionrelative:unicom_managment_system\\model\\lecturer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{185922BE-10BC-4E16-A38C-11DBD1603D3D}|Unicom_Managment_System\\Unicom_Managment_System.csproj|c:\\users\\ut010057\\desktop\\pro\\unicom-managment-system\\unicom_managment_system\\model\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{185922BE-10BC-4E16-A38C-11DBD1603D3D}|Unicom_Managment_System\\Unicom_Managment_System.csproj|solutionrelative:unicom_managment_system\\model\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{185922BE-10BC-4E16-A38C-11DBD1603D3D}|Unicom_Managment_System\\Unicom_Managment_System.csproj|c:\\users\\ut010057\\desktop\\pro\\unicom-managment-system\\unicom_managment_system\\model\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{185922BE-10BC-4E16-A38C-11DBD1603D3D}|Unicom_Managment_System\\Unicom_Managment_System.csproj|solutionrelative:unicom_managment_system\\model\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{185922BE-10BC-4E16-A38C-11DBD1603D3D}|Unicom_Managment_System\\Unicom_Managment_System.csproj|C:\\Users\\UT010057\\Desktop\\pro\\Unicom-Managment-System\\unicom_managment_system\\form\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{185922BE-10BC-4E16-A38C-11DBD1603D3D}|Unicom_Managment_System\\Unicom_Managment_System.csproj|solutionrelative:unicom_managment_system\\form\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{185922BE-10BC-4E16-A38C-11DBD1603D3D}|Unicom_Managment_System\\Unicom_Managment_System.csproj|C:\\Users\\UT010057\\Desktop\\pro\\Unicom-Managment-System\\unicom_managment_system\\data\\db_connection\\dbconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{185922BE-10BC-4E16-A38C-11DBD1603D3D}|Unicom_Managment_System\\Unicom_Managment_System.csproj|solutionrelative:unicom_managment_system\\data\\db_connection\\dbconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{185922BE-10BC-4E16-A38C-11DBD1603D3D}|Unicom_Managment_System\\Unicom_Managment_System.csproj|C:\\Users\\UT010057\\Desktop\\pro\\Unicom-Managment-System\\unicom_managment_system\\form\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{185922BE-10BC-4E16-A38C-11DBD1603D3D}|Unicom_Managment_System\\Unicom_Managment_System.csproj|solutionrelative:unicom_managment_system\\form\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{185922BE-10BC-4E16-A38C-11DBD1603D3D}|Unicom_Managment_System\\Unicom_Managment_System.csproj|C:\\Users\\UT010057\\Desktop\\pro\\Unicom-Managment-System\\unicom_managment_system\\model\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{185922BE-10BC-4E16-A38C-11DBD1603D3D}|Unicom_Managment_System\\Unicom_Managment_System.csproj|solutionrelative:unicom_managment_system\\model\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{185922BE-10BC-4E16-A38C-11DBD1603D3D}|Unicom_Managment_System\\Unicom_Managment_System.csproj|C:\\Users\\UT010057\\Desktop\\pro\\Unicom-Managment-System\\unicom_managment_system\\model\\subject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{185922BE-10BC-4E16-A38C-11DBD1603D3D}|Unicom_Managment_System\\Unicom_Managment_System.csproj|solutionrelative:unicom_managment_system\\model\\subject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{185922BE-10BC-4E16-A38C-11DBD1603D3D}|Unicom_Managment_System\\Unicom_Managment_System.csproj|C:\\Users\\UT010057\\Desktop\\pro\\Unicom-Managment-System\\unicom_managment_system\\model\\course_subject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{185922BE-10BC-4E16-A38C-11DBD1603D3D}|Unicom_Managment_System\\Unicom_Managment_System.csproj|solutionrelative:unicom_managment_system\\model\\course_subject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{185922BE-10BC-4E16-A38C-11DBD1603D3D}|Unicom_Managment_System\\Unicom_Managment_System.csproj|c:\\users\\ut010057\\desktop\\pro\\unicom-managment-system\\unicom_managment_system\\model\\exam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{185922BE-10BC-4E16-A38C-11DBD1603D3D}|Unicom_Managment_System\\Unicom_Managment_System.csproj|solutionrelative:unicom_managment_system\\model\\exam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{185922BE-10BC-4E16-A38C-11DBD1603D3D}|Unicom_Managment_System\\Unicom_Managment_System.csproj|c:\\users\\ut010057\\desktop\\pro\\unicom-managment-system\\unicom_managment_system\\model\\timetable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{185922BE-10BC-4E16-A38C-11DBD1603D3D}|Unicom_Managment_System\\Unicom_Managment_System.csproj|solutionrelative:unicom_managment_system\\model\\timetable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{185922BE-10BC-4E16-A38C-11DBD1603D3D}|Unicom_Managment_System\\Unicom_Managment_System.csproj|c:\\users\\ut010057\\desktop\\pro\\unicom-managment-system\\unicom_managment_system\\model\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{185922BE-10BC-4E16-A38C-11DBD1603D3D}|Unicom_Managment_System\\Unicom_Managment_System.csproj|solutionrelative:unicom_managment_system\\model\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{185922BE-10BC-4E16-A38C-11DBD1603D3D}|Unicom_Managment_System\\Unicom_Managment_System.csproj|c:\\users\\ut010057\\desktop\\pro\\unicom-managment-system\\unicom_managment_system\\model\\marks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{185922BE-10BC-4E16-A38C-11DBD1603D3D}|Unicom_Managment_System\\Unicom_Managment_System.csproj|solutionrelative:unicom_managment_system\\model\\marks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{185922BE-10BC-4E16-A38C-11DBD1603D3D}|Unicom_Managment_System\\Unicom_Managment_System.csproj|c:\\users\\ut010057\\desktop\\pro\\unicom-managment-system\\unicom_managment_system\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{185922BE-10BC-4E16-A38C-11DBD1603D3D}|Unicom_Managment_System\\Unicom_Managment_System.csproj|solutionrelative:unicom_managment_system\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,15 +66,116 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "CreateTable.cs",
+              "DocumentMoniker": "C:\\Users\\UT010057\\Desktop\\pro\\Unicom-Managment-System\\Unicom_Managment_System\\Data\\Migration\\CreateTable.cs",
+              "RelativeDocumentMoniker": "Unicom_Managment_System\\Data\\Migration\\CreateTable.cs",
+              "ToolTip": "C:\\Users\\UT010057\\Desktop\\pro\\Unicom-Managment-System\\Unicom_Managment_System\\Data\\Migration\\CreateTable.cs",
+              "RelativeToolTip": "Unicom_Managment_System\\Data\\Migration\\CreateTable.cs",
+              "ViewState": "AQIAAFAAAAAAAAAAAAAiwGQAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-11T09:52:33.913Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Batch.cs",
+              "DocumentMoniker": "C:\\Users\\UT010057\\Desktop\\pro\\Unicom-Managment-System\\Unicom_Managment_System\\Model\\Batch.cs",
+              "RelativeDocumentMoniker": "Unicom_Managment_System\\Model\\Batch.cs",
+              "ToolTip": "C:\\Users\\UT010057\\Desktop\\pro\\Unicom-Managment-System\\Unicom_Managment_System\\Model\\Batch.cs",
+              "RelativeToolTip": "Unicom_Managment_System\\Model\\Batch.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-13T12:07:43.951Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Lecturer.cs",
+              "DocumentMoniker": "C:\\Users\\UT010057\\Desktop\\pro\\Unicom-Managment-System\\Unicom_Managment_System\\Model\\Lecturer.cs",
+              "RelativeDocumentMoniker": "Unicom_Managment_System\\Model\\Lecturer.cs",
+              "ToolTip": "C:\\Users\\UT010057\\Desktop\\pro\\Unicom-Managment-System\\Unicom_Managment_System\\Model\\Lecturer.cs",
+              "RelativeToolTip": "Unicom_Managment_System\\Model\\Lecturer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-13T10:59:06.025Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Student.cs",
+              "DocumentMoniker": "C:\\Users\\UT010057\\Desktop\\pro\\Unicom-Managment-System\\Unicom_Managment_System\\Model\\Student.cs",
+              "RelativeDocumentMoniker": "Unicom_Managment_System\\Model\\Student.cs",
+              "ToolTip": "C:\\Users\\UT010057\\Desktop\\pro\\Unicom-Managment-System\\Unicom_Managment_System\\Model\\Student.cs",
+              "RelativeToolTip": "Unicom_Managment_System\\Model\\Student.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-13T10:36:15.075Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Marks.cs",
+              "DocumentMoniker": "C:\\Users\\UT010057\\Desktop\\pro\\Unicom-Managment-System\\Unicom_Managment_System\\Model\\Marks.cs",
+              "RelativeDocumentMoniker": "Unicom_Managment_System\\Model\\Marks.cs",
+              "ToolTip": "C:\\Users\\UT010057\\Desktop\\pro\\Unicom-Managment-System\\Unicom_Managment_System\\Model\\Marks.cs",
+              "RelativeToolTip": "Unicom_Managment_System\\Model\\Marks.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-13T09:32:44.909Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Room.cs",
+              "DocumentMoniker": "C:\\Users\\UT010057\\Desktop\\pro\\Unicom-Managment-System\\Unicom_Managment_System\\Model\\Room.cs",
+              "RelativeDocumentMoniker": "Unicom_Managment_System\\Model\\Room.cs",
+              "ToolTip": "C:\\Users\\UT010057\\Desktop\\pro\\Unicom-Managment-System\\Unicom_Managment_System\\Model\\Room.cs",
+              "RelativeToolTip": "Unicom_Managment_System\\Model\\Room.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-13T09:11:29.926Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Timetable.cs",
+              "DocumentMoniker": "C:\\Users\\UT010057\\Desktop\\pro\\Unicom-Managment-System\\Unicom_Managment_System\\Model\\Timetable.cs",
+              "RelativeDocumentMoniker": "Unicom_Managment_System\\Model\\Timetable.cs",
+              "ToolTip": "C:\\Users\\UT010057\\Desktop\\pro\\Unicom-Managment-System\\Unicom_Managment_System\\Model\\Timetable.cs",
+              "RelativeToolTip": "Unicom_Managment_System\\Model\\Timetable.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-13T08:41:46.068Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Exam.cs",
+              "DocumentMoniker": "C:\\Users\\UT010057\\Desktop\\pro\\Unicom-Managment-System\\Unicom_Managment_System\\Model\\Exam.cs",
+              "RelativeDocumentMoniker": "Unicom_Managment_System\\Model\\Exam.cs",
+              "ToolTip": "C:\\Users\\UT010057\\Desktop\\pro\\Unicom-Managment-System\\Unicom_Managment_System\\Model\\Exam.cs",
+              "RelativeToolTip": "Unicom_Managment_System\\Model\\Exam.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-13T08:31:29.071Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\UT010057\\Desktop\\pro\\Unicom-Managment-System\\Unicom_Managment_System\\Program.cs",
               "RelativeDocumentMoniker": "Unicom_Managment_System\\Program.cs",
@@ -59,7 +188,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "Course_Subject.cs",
               "DocumentMoniker": "C:\\Users\\UT010057\\Desktop\\pro\\Unicom-Managment-System\\Unicom_Managment_System\\Model\\Course_Subject.cs",
               "RelativeDocumentMoniker": "Unicom_Managment_System\\Model\\Course_Subject.cs",
@@ -72,7 +201,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "Subject.cs",
               "DocumentMoniker": "C:\\Users\\UT010057\\Desktop\\pro\\Unicom-Managment-System\\Unicom_Managment_System\\Model\\Subject.cs",
               "RelativeDocumentMoniker": "Unicom_Managment_System\\Model\\Subject.cs",
@@ -85,7 +214,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "Course.cs",
               "DocumentMoniker": "C:\\Users\\UT010057\\Desktop\\pro\\Unicom-Managment-System\\Unicom_Managment_System\\Model\\Course.cs",
               "RelativeDocumentMoniker": "Unicom_Managment_System\\Model\\Course.cs",
@@ -111,26 +240,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CreateTable.cs",
-              "DocumentMoniker": "C:\\Users\\UT010057\\Desktop\\pro\\Unicom-Managment-System\\Unicom_Managment_System\\Data\\Migration\\CreateTable.cs",
-              "RelativeDocumentMoniker": "Unicom_Managment_System\\Data\\Migration\\CreateTable.cs",
-              "ToolTip": "C:\\Users\\UT010057\\Desktop\\pro\\Unicom-Managment-System\\Unicom_Managment_System\\Data\\Migration\\CreateTable.cs",
-              "RelativeToolTip": "Unicom_Managment_System\\Data\\Migration\\CreateTable.cs",
-              "ViewState": "AQIAAAIAAAAAAAAAAAAIwAoAAAAeAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-11T09:52:33.913Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\Users\\UT010057\\Desktop\\pro\\Unicom-Managment-System\\Unicom_Managment_System\\Form\\Form1.cs",
               "RelativeDocumentMoniker": "Unicom_Managment_System\\Form\\Form1.cs",
-              "ToolTip": "Z:\\C#\\Project\\Unicom_Managment_System\\Unicom_Managment_System\\Form\\Form1.cs [Design]",
+              "ToolTip": "C:\\Users\\UT010057\\Desktop\\pro\\Unicom-Managment-System\\Unicom_Managment_System\\Form\\Form1.cs [Design]",
+              "RelativeToolTip": "Unicom_Managment_System\\Form\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-11T09:43:56.178Z"
+              "WhenOpened": "2025-06-11T09:43:56.178Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }
