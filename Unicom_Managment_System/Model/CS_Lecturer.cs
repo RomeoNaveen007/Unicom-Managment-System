@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace Unicom_Managment_System.Model
 {
-    internal class Batch
+    internal class CS_Lecturer
     {
-        public int Batch_ID { get; set; }
-        public string Batch_Name { get; set; }
-        public int Year { get; set; }
+        public int CS_ID { get; set; }
+        public int Lecturer_ID { get; set; }
     }
 }

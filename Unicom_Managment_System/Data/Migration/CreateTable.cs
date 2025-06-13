@@ -32,7 +32,7 @@ namespace Unicom_Managment_System.Data.Migration
                                         Cousre_ID INTEGER,
                                         FOREIGN KEY (Subject_ID) REFERENCES Subject(Subject_ID),
                                         FOREIGN KEY (Cousre_ID) REFERENCES Course(Cousre_ID),
-                                        CHECK (CS_ID >= 1001 AND CS_ID <= 9999));
+                                        CHECK (CS_ID >= 1001 AND CS_ID <=4999));
                 
                                 CREATE TABLE IF NOT EXISTS Exam (
                                         Exam_ID INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -94,12 +94,51 @@ namespace Unicom_Managment_System.Data.Migration
                                  CREATE TABLE IF NOT EXISTS Batch (
                                         Batch_ID INTEGER PRIMARY KEY AUTOINCREMENT, 
                                         Batch_Name TEXT NOT NULL UNIQUE,
-                                        Batch_Year INTEGER NOT NULL,
-                                        CHECK (Batch_ID >= 0001 AND Batch_ID <=0100));      
+                                        Year INTEGER NOT NULL,
+                                        CHECK (Batch_ID >= 5001 AND Batch_ID <= 9999));      
                                                                                                            
-                                        
+                                          
+                                 CREATE TABLE IF NOT EXISTS CS_Lecturer (
+                                        CS_ID INTEGER, 
+                                        Lecturer_ID INTEGER,
+                                        PRIMARY KEY (CS_ID,Lecturer_ID),
+                                        FOREIGN KEY (CS_ID) REFERENCES Course_Subject(CS_ID),
+                                        FOREIGN KEY (Lecturer_ID) REFERENCES Lecturer(Lecturer_ID) );            
                                  
+                                CREATE TABLE IF NOT EXISTS Lecturer_Batch (
+                                        Lecturer_ID INTEGER,
+                                        Batch_ID INTEGER, 
+                                        PRIMARY KEY (Lecturer_ID,Batch_ID),
+                                        FOREIGN KEY (Lecturer_ID) REFERENCES Lecturer(Lecturer_ID),     
+                                        FOREIGN KEY (Batch_ID) REFERENCES Batch(Batch_ID) );
 
+                                CREATE TABLE IF NOT EXISTS Staff (
+                                        Staff_ID INTEGER PRIMARY KEY AUTOINCREMENT,
+                                        Staff_Name TEXT NOT NULL,
+                                        Staff_Address TEXT NOT NULL,
+                                        Staff_NIC TEXT UNIQUE NOT NULL,
+                                        Staff_Status TEXT NOT NULL,
+                                        CHECK (Staff_ID >= 2000001 AND Staff_ID <=2999999));
+                                        
+                                CREATE TABLE IF NOT EXISTS Admin (
+                                        Admin_ID INTEGER PRIMARY KEY AUTOINCREMENT,
+                                        Admin_Name TEXT NOT NULL,
+                                        Admin_Address TEXT NOT NULL,
+                                        Admin_NIC TEXT UNIQUE NOT NULL,
+                                        Admin_Status TEXT NOT NULL,
+                                        CHECK (Admin_ID >= 3000001 AND Admin_ID <= 3000100));
+                                
+                                CREATE TABLE IF NOT EXISTS Attendence (
+                                        Attendence_ID INTEGER PRIMARY KEY AUTOINCREMENT,
+                                        Attendence_Status TEXT NOT NULL,
+                                        Marked_Student_Att INTEGER,
+                                        Timetable_ID INTEGER,
+                                        User_ID INTEGER NOT NULL,
+                                        FOREIGN KEY (User_ID) REFERENCES User(User_ID),
+                                        FOREIGN KEY (Marked_Student_Att) REFERENCES Student(Student_ID),
+                                        FOREIGN KEY (Timetable_ID) REFERENCES Timetable(Timetable_ID),
+                                        CHECK (Attendence_ID >= 3000200 AND Attendence_ID <=4099999));
+                                        
 
 
 
