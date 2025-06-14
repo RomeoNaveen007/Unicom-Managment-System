@@ -10,3 +10,16 @@ C:\Users\UT010057\Desktop\pro\Unicom-Managment-System\Unicom_Managment_System\ob
 C:\Users\UT010057\Desktop\pro\Unicom-Managment-System\Unicom_Managment_System\obj\Debug\Unicom_M.49E6703B.Up2Date
 C:\Users\UT010057\Desktop\pro\Unicom-Managment-System\Unicom_Managment_System\obj\Debug\Unicom_Managment_System.exe
 C:\Users\UT010057\Desktop\pro\Unicom-Managment-System\Unicom_Managment_System\obj\Debug\Unicom_Managment_System.pdb
+C:\Naveen\C # Project\Unicom-Managment-System\Unicom_Managment_System\bin\Debug\Unicom_Managment_System.exe.config
+C:\Naveen\C # Project\Unicom-Managment-System\Unicom_Managment_System\bin\Debug\Unicom_Managment_System.exe
+C:\Naveen\C # Project\Unicom-Managment-System\Unicom_Managment_System\bin\Debug\Unicom_Managment_System.pdb
+C:\Naveen\C # Project\Unicom-Managment-System\Unicom_Managment_System\bin\Debug\System.Data.SQLite.dll
+C:\Naveen\C # Project\Unicom-Managment-System\Unicom_Managment_System\bin\Debug\System.Data.SQLite.xml
+C:\Naveen\C # Project\Unicom-Managment-System\Unicom_Managment_System\obj\Debug\Unicom_Managment_System.csproj.AssemblyReference.cache
+C:\Naveen\C # Project\Unicom-Managment-System\Unicom_Managment_System\obj\Debug\Unicom_Managment_System.exe.config
+C:\Naveen\C # Project\Unicom-Managment-System\Unicom_Managment_System\obj\Debug\Unicom_Managment_System.Properties.Resources.resources
+C:\Naveen\C # Project\Unicom-Managment-System\Unicom_Managment_System\obj\Debug\Unicom_Managment_System.csproj.GenerateResource.cache
+C:\Naveen\C # Project\Unicom-Managment-System\Unicom_Managment_System\obj\Debug\Unicom_Managment_System.csproj.CoreCompileInputs.cache
+C:\Naveen\C # Project\Unicom-Managment-System\Unicom_Managment_System\obj\Debug\Unicom_M.49E6703B.Up2Date
+C:\Naveen\C # Project\Unicom-Managment-System\Unicom_Managment_System\obj\Debug\Unicom_Managment_System.exe
+C:\Naveen\C # Project\Unicom-Managment-System\Unicom_Managment_System\obj\Debug\Unicom_Managment_System.pdb
