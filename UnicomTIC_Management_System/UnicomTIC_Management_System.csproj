@@ -187,6 +187,24 @@
     <Compile Include="Service\Subject_Service.cs" />
     <Compile Include="Service\Timetable_Service.cs" />
     <Compile Include="Service\User_Service.cs" />
+    <EmbeddedResource Include="Forms\Exam_Form.resx">
+      <DependentUpon>Exam_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Login_Form.resx">
+      <DependentUpon>Login_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Mark_Form.resx">
+      <DependentUpon>Mark_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Student_Form.resx">
+      <DependentUpon>Student_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Timetable_Form.resx">
+      <DependentUpon>Timetable_Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

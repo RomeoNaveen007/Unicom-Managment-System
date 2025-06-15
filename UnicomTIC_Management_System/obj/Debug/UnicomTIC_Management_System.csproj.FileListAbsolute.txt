@@ -10,3 +10,16 @@ C:\Naveen\UnicomTIC_Management_System\UnicomTIC_Management_System\obj\Debug\Unic
 C:\Naveen\UnicomTIC_Management_System\UnicomTIC_Management_System\obj\Debug\UnicomTI.3500D1D6.Up2Date
 C:\Naveen\UnicomTIC_Management_System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.exe
 C:\Naveen\UnicomTIC_Management_System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.pdb
+C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\bin\Debug\UnicomTIC_Management_System.exe.config
+C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\bin\Debug\UnicomTIC_Management_System.exe
+C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\bin\Debug\UnicomTIC_Management_System.pdb
+C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\bin\Debug\System.Data.SQLite.dll
+C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\bin\Debug\System.Data.SQLite.xml
+C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.csproj.AssemblyReference.cache
+C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.exe.config
+C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Properties.Resources.resources
+C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.csproj.GenerateResource.cache
+C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.csproj.CoreCompileInputs.cache
+C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTI.3500D1D6.Up2Date
+C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.exe
+C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.pdb

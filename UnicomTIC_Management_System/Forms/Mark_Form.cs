@@ -16,5 +16,10 @@ namespace UnicomTIC_Management_System.Forms
         {
             InitializeComponent();
         }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
