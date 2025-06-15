@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B59FB897-87EC-428B-BDD9-8F9DB0C2DF97}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>UnicomTIC_Management_System</RootNamespace>
+    <AssemblyName>UnicomTIC_Management_System</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.119.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\lib\net46\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controller\Admin_Controller.cs" />
+    <Compile Include="Controller\Attendance_Controller.cs" />
+    <Compile Include="Controller\Batch_Controller.cs" />
+    <Compile Include="Controller\Course_Controller.cs" />
+    <Compile Include="Controller\CS_Controller.cs" />
+    <Compile Include="Controller\CS_Lecturer_Controller.cs" />
+    <Compile Include="Controller\Exam_Controller.cs" />
+    <Compile Include="Controller\Lecturer_Batch_Controller.cs" />
+    <Compile Include="Controller\Lecturer_Controller.cs" />
+    <Compile Include="Controller\Mark_Controller.cs" />
+    <Compile Include="Controller\Room_Controller.cs" />
+    <Compile Include="Controller\Staff_Controller.cs" />
+    <Compile Include="Controller\Student_Contoller.cs" />
+    <Compile Include="Controller\Subject_Controller.cs" />
+    <Compile Include="Controller\Timetable_Controller.cs" />
+    <Compile Include="Controller\User_Controller.cs" />
+    <Compile Include="Data\DB_Connection\DB_Config.cs" />
+    <Compile Include="Data\Migration\CreateTable.cs" />
+    <Compile Include="Forms\Admin_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin_Form.Designer.cs">
+      <DependentUpon>Admin_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Attendance_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Attendance_Form.Designer.cs">
+      <DependentUpon>Attendance_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Batch_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Batch_Form.Designer.cs">
+      <DependentUpon>Batch_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Course_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Course_Form.Designer.cs">
+      <DependentUpon>Course_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Exam_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Exam_Form.Designer.cs">
+      <DependentUpon>Exam_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Lecturer_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Lecturer_Form.Designer.cs">
+      <DependentUpon>Lecturer_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Login_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Login_Form.Designer.cs">
+      <DependentUpon>Login_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Mark_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Mark_Form.Designer.cs">
+      <DependentUpon>Mark_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Room_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Room_Form.Designer.cs">
+      <DependentUpon>Room_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Staff_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Staff_Form.Designer.cs">
+      <DependentUpon>Staff_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Student_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Student_Form.Designer.cs">
+      <DependentUpon>Student_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Subject_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Subject_Form.Designer.cs">
+      <DependentUpon>Subject_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Timetable_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Timetable_Form.Designer.cs">
+      <DependentUpon>Timetable_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Admin.cs" />
+    <Compile Include="Model\Attendance.cs" />
+    <Compile Include="Model\Batch.cs" />
+    <Compile Include="Model\Course.cs" />
+    <Compile Include="Model\Course_Subject.cs" />
+    <Compile Include="Model\CS_Lecturer.cs" />
+    <Compile Include="Model\Exam.cs" />
+    <Compile Include="Model\Lecturer.cs" />
+    <Compile Include="Model\Lecturer_Batch.cs" />
+    <Compile Include="Model\Mark.cs" />
+    <Compile Include="Model\Room.cs" />
+    <Compile Include="Model\Staff.cs" />
+    <Compile Include="Model\Student.cs" />
+    <Compile Include="Model\Subject.cs" />
+    <Compile Include="Model\Timetable.cs" />
+    <Compile Include="Model\User.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\Admin_Service.cs" />
+    <Compile Include="Service\Attendence_Service.cs" />
+    <Compile Include="Service\Batch_Service.cs" />
+    <Compile Include="Service\Course_Service.cs" />
+    <Compile Include="Service\CS_Lecturer_Service.cs" />
+    <Compile Include="Service\CS_Services.cs" />
+    <Compile Include="Service\Exam_Services.cs" />
+    <Compile Include="Service\Lecturer_Batch_Service.cs" />
+    <Compile Include="Service\Lecturer_Service.cs" />
+    <Compile Include="Service\Mark_Service.cs" />
+    <Compile Include="Service\Room_Service.cs" />
+    <Compile Include="Service\Staff_Service.cs" />
+    <Compile Include="Service\Student_Services.cs" />
+    <Compile Include="Service\Subject_Service.cs" />
+    <Compile Include="Service\Timetable_Service.cs" />
+    <Compile Include="Service\User_Service.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\Image\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets'))" />
+  </Target>
+</Project>
