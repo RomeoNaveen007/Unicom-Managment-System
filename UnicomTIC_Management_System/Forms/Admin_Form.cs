@@ -16,5 +16,10 @@ namespace UnicomTIC_Management_System.Forms
         {
             InitializeComponent();
         }
+
+        private void Admin_Form_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

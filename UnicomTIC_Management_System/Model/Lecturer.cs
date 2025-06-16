@@ -13,7 +13,7 @@ namespace UnicomTIC_Management_System.Model
         public string Lecturer_Address { get; set; }
         public string Lecturer_NIC { get; set; }
         public string Lecturer_Status { get; set; }
-        public string Lecturer_Degree { get; set; }
+        public string Special_In { get; set; }
 
     }
 }

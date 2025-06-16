@@ -23,3 +23,17 @@ C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\De
 C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTI.3500D1D6.Up2Date
 C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.exe
 C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.pdb
+C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Forms.Admin_Form.resources
+C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Forms.Attendance_Form.resources
+C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Forms.Batch_Form.resources
+C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Forms.Course_Form.resources
+C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Forms.Exam_Form.resources
+C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Forms.Lecturer_Form.resources
+C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Forms.Login_Form.resources
+C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.MainForm.resources
+C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Forms.Mark_Form.resources
+C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Forms.Room_Form.resources
+C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Forms.Staff_Form.resources
+C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Forms.Student_Form.resources
+C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Forms.Subject_Form.resources
+C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Forms.Timetable_Form.resources

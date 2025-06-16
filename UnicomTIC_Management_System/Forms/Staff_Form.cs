@@ -16,5 +16,10 @@ namespace UnicomTIC_Management_System.Forms
         {
             InitializeComponent();
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

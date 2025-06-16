@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SQLite;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -106,7 +107,7 @@ namespace UnicomTIC_Management_System.Data.Migration
                                     Lecturer_Address TEXT NOT NULL,
                                     Lecturer_NIC TEXT UNIQUE NOT NULL,
                                     Lecturer_Status TEXT NOT NULL,
-                                    Lecturer_Degree TEXT NOT NULL,
+                                    Special_In TEXT NOT NULL,
                                     CHECK (Lecturer_ID >= 1000001 AND Lecturer_ID <= 1999999)
                                 );
 
@@ -156,6 +157,12 @@ namespace UnicomTIC_Management_System.Data.Migration
                                     CHECK (Attendance_ID >= 3000201 AND Attendance_ID <= 4099999)
                                 );
                                 ";
+
+                using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
+                {
+                    cmd.ExecuteNonQuery();
+
+                }
             }
         }
     }
