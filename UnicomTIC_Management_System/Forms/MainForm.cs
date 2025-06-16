@@ -20,11 +20,11 @@ namespace UnicomTIC_Management_System
 
         private void OpenFormInPanel(Form OpenForm)
         {
-            panel3.Controls.Clear();              // Remove previous form
+            panel4.Controls.Clear();              // Remove previous form
             OpenForm.TopLevel = false;                  // Important: treat as control
             OpenForm.FormBorderStyle = FormBorderStyle.None;
             OpenForm.Dock = DockStyle.Fill;
-            panel3.Controls.Add(OpenForm);      // Add form to panel
+            panel4.Controls.Add(OpenForm);      // Add form to panel
             OpenForm.Show();
         }
 
@@ -97,6 +97,16 @@ namespace UnicomTIC_Management_System
         private void button15_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
