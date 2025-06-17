@@ -52,7 +52,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\Admin_Controller.cs" />
-    <Compile Include="Controller\Attendance_Controller.cs" />
+    <Compile Include="Controller\Lecturer_Att_Controller.cs" />
+    <Compile Include="Controller\Log_Table_Controller.cs" />
+    <Compile Include="Controller\Staff_Att_Controller.cs" />
+    <Compile Include="Controller\Student_Att_Controller.cs" />
     <Compile Include="Controller\Batch_Controller.cs" />
     <Compile Include="Controller\Course_Controller.cs" />
     <Compile Include="Controller\CS_Controller.cs" />
@@ -161,18 +164,24 @@
     <Compile Include="Model\CS_Lecturer.cs" />
     <Compile Include="Model\Exam.cs" />
     <Compile Include="Model\Lecturer.cs" />
+    <Compile Include="Model\Lecturer_Attendence.cs" />
     <Compile Include="Model\Lecturer_Batch.cs" />
+    <Compile Include="Model\Log_Table.cs" />
     <Compile Include="Model\Mark.cs" />
     <Compile Include="Model\Room.cs" />
     <Compile Include="Model\Staff.cs" />
+    <Compile Include="Model\Staff_Attendence.cs" />
     <Compile Include="Model\Student.cs" />
     <Compile Include="Model\Subject.cs" />
-    <Compile Include="Model\Timetable.cs" />
+    <Compile Include="Model\Student_Attendance.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\Admin_Service.cs" />
-    <Compile Include="Service\Attendence_Service.cs" />
+    <Compile Include="Service\Lecturer_Att_Service.cs" />
+    <Compile Include="Service\Log_Table_Service.cs" />
+    <Compile Include="Service\Staff_Att_Service.cs" />
+    <Compile Include="Service\Student_Att_Service.cs" />
     <Compile Include="Service\Batch_Service.cs" />
     <Compile Include="Service\Course_Service.cs" />
     <Compile Include="Service\CS_Lecturer_Service.cs" />

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UnicomTIC_Management_System.Controller
+namespace UnicomTIC_Management_System.Service
 {
-    internal class Attendance_Controller
+    internal class Lecturer_Att_Service
     {
     }
 }

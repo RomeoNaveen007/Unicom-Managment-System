@@ -3,60 +3,24 @@
   "WorkspaceRootPath": "C:\\Naveen\\C # Project\\Unicom-Managment-System\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{B59FB897-87EC-428B-BDD9-8F9DB0C2DF97}|UnicomTIC_Management_System\\UnicomTIC_Management_System.csproj|c:\\naveen\\c # project\\unicom-managment-system\\unicomtic_management_system\\forms\\admin_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B59FB897-87EC-428B-BDD9-8F9DB0C2DF97}|UnicomTIC_Management_System\\UnicomTIC_Management_System.csproj|solutionrelative:unicomtic_management_system\\forms\\admin_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B59FB897-87EC-428B-BDD9-8F9DB0C2DF97}|UnicomTIC_Management_System\\UnicomTIC_Management_System.csproj|c:\\naveen\\c # project\\unicom-managment-system\\unicomtic_management_system\\service\\admin_service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B59FB897-87EC-428B-BDD9-8F9DB0C2DF97}|UnicomTIC_Management_System\\UnicomTIC_Management_System.csproj|solutionrelative:unicomtic_management_system\\service\\admin_service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B59FB897-87EC-428B-BDD9-8F9DB0C2DF97}|UnicomTIC_Management_System\\UnicomTIC_Management_System.csproj|c:\\naveen\\c # project\\unicom-managment-system\\unicomtic_management_system\\forms\\admin_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B59FB897-87EC-428B-BDD9-8F9DB0C2DF97}|UnicomTIC_Management_System\\UnicomTIC_Management_System.csproj|solutionrelative:unicomtic_management_system\\forms\\admin_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B59FB897-87EC-428B-BDD9-8F9DB0C2DF97}|UnicomTIC_Management_System\\UnicomTIC_Management_System.csproj|c:\\naveen\\c # project\\unicom-managment-system\\unicomtic_management_system\\data\\migration\\createtable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B59FB897-87EC-428B-BDD9-8F9DB0C2DF97}|UnicomTIC_Management_System\\UnicomTIC_Management_System.csproj|solutionrelative:unicomtic_management_system\\data\\migration\\createtable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B59FB897-87EC-428B-BDD9-8F9DB0C2DF97}|UnicomTIC_Management_System\\UnicomTIC_Management_System.csproj|c:\\naveen\\c # project\\unicom-managment-system\\unicomtic_management_system\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B59FB897-87EC-428B-BDD9-8F9DB0C2DF97}|UnicomTIC_Management_System\\UnicomTIC_Management_System.csproj|solutionrelative:unicomtic_management_system\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B59FB897-87EC-428B-BDD9-8F9DB0C2DF97}|UnicomTIC_Management_System\\UnicomTIC_Management_System.csproj|C:\\Naveen\\C # Project\\Unicom-Managment-System\\unicomtic_management_system\\forms\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B59FB897-87EC-428B-BDD9-8F9DB0C2DF97}|UnicomTIC_Management_System\\UnicomTIC_Management_System.csproj|solutionrelative:unicomtic_management_system\\forms\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B59FB897-87EC-428B-BDD9-8F9DB0C2DF97}|UnicomTIC_Management_System\\UnicomTIC_Management_System.csproj|c:\\naveen\\c # project\\unicom-managment-system\\unicomtic_management_system\\forms\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{B59FB897-87EC-428B-BDD9-8F9DB0C2DF97}|UnicomTIC_Management_System\\UnicomTIC_Management_System.csproj|solutionrelative:unicomtic_management_system\\forms\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B59FB897-87EC-428B-BDD9-8F9DB0C2DF97}|UnicomTIC_Management_System\\UnicomTIC_Management_System.csproj|C:\\Naveen\\C # Project\\Unicom-Managment-System\\unicomtic_management_system\\forms\\student_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B59FB897-87EC-428B-BDD9-8F9DB0C2DF97}|UnicomTIC_Management_System\\UnicomTIC_Management_System.csproj|solutionrelative:unicomtic_management_system\\forms\\student_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B59FB897-87EC-428B-BDD9-8F9DB0C2DF97}|UnicomTIC_Management_System\\UnicomTIC_Management_System.csproj|C:\\Naveen\\C # Project\\Unicom-Managment-System\\unicomtic_management_system\\forms\\staff_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B59FB897-87EC-428B-BDD9-8F9DB0C2DF97}|UnicomTIC_Management_System\\UnicomTIC_Management_System.csproj|solutionrelative:unicomtic_management_system\\forms\\staff_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B59FB897-87EC-428B-BDD9-8F9DB0C2DF97}|UnicomTIC_Management_System\\UnicomTIC_Management_System.csproj|C:\\Naveen\\C # Project\\Unicom-Managment-System\\unicomtic_management_system\\forms\\room_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B59FB897-87EC-428B-BDD9-8F9DB0C2DF97}|UnicomTIC_Management_System\\UnicomTIC_Management_System.csproj|solutionrelative:unicomtic_management_system\\forms\\room_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B59FB897-87EC-428B-BDD9-8F9DB0C2DF97}|UnicomTIC_Management_System\\UnicomTIC_Management_System.csproj|C:\\Naveen\\C # Project\\Unicom-Managment-System\\unicomtic_management_system\\forms\\mark_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B59FB897-87EC-428B-BDD9-8F9DB0C2DF97}|UnicomTIC_Management_System\\UnicomTIC_Management_System.csproj|solutionrelative:unicomtic_management_system\\forms\\mark_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B59FB897-87EC-428B-BDD9-8F9DB0C2DF97}|UnicomTIC_Management_System\\UnicomTIC_Management_System.csproj|C:\\Naveen\\C # Project\\Unicom-Managment-System\\unicomtic_management_system\\forms\\login_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B59FB897-87EC-428B-BDD9-8F9DB0C2DF97}|UnicomTIC_Management_System\\UnicomTIC_Management_System.csproj|solutionrelative:unicomtic_management_system\\forms\\login_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B59FB897-87EC-428B-BDD9-8F9DB0C2DF97}|UnicomTIC_Management_System\\UnicomTIC_Management_System.csproj|C:\\Naveen\\C # Project\\Unicom-Managment-System\\unicomtic_management_system\\forms\\lecturer_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B59FB897-87EC-428B-BDD9-8F9DB0C2DF97}|UnicomTIC_Management_System\\UnicomTIC_Management_System.csproj|solutionrelative:unicomtic_management_system\\forms\\lecturer_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B59FB897-87EC-428B-BDD9-8F9DB0C2DF97}|UnicomTIC_Management_System\\UnicomTIC_Management_System.csproj|C:\\Naveen\\C # Project\\Unicom-Managment-System\\unicomtic_management_system\\forms\\exam_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B59FB897-87EC-428B-BDD9-8F9DB0C2DF97}|UnicomTIC_Management_System\\UnicomTIC_Management_System.csproj|solutionrelative:unicomtic_management_system\\forms\\exam_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B59FB897-87EC-428B-BDD9-8F9DB0C2DF97}|UnicomTIC_Management_System\\UnicomTIC_Management_System.csproj|C:\\Naveen\\C # Project\\Unicom-Managment-System\\unicomtic_management_system\\forms\\course_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B59FB897-87EC-428B-BDD9-8F9DB0C2DF97}|UnicomTIC_Management_System\\UnicomTIC_Management_System.csproj|solutionrelative:unicomtic_management_system\\forms\\course_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B59FB897-87EC-428B-BDD9-8F9DB0C2DF97}|UnicomTIC_Management_System\\UnicomTIC_Management_System.csproj|C:\\Naveen\\C # Project\\Unicom-Managment-System\\unicomtic_management_system\\forms\\batch_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B59FB897-87EC-428B-BDD9-8F9DB0C2DF97}|UnicomTIC_Management_System\\UnicomTIC_Management_System.csproj|solutionrelative:unicomtic_management_system\\forms\\batch_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B59FB897-87EC-428B-BDD9-8F9DB0C2DF97}|UnicomTIC_Management_System\\UnicomTIC_Management_System.csproj|C:\\Naveen\\C # Project\\Unicom-Managment-System\\unicomtic_management_system\\forms\\admin_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B59FB897-87EC-428B-BDD9-8F9DB0C2DF97}|UnicomTIC_Management_System\\UnicomTIC_Management_System.csproj|solutionrelative:unicomtic_management_system\\forms\\admin_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -66,168 +30,71 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "CreateTable.cs",
               "DocumentMoniker": "C:\\Naveen\\C # Project\\Unicom-Managment-System\\UnicomTIC_Management_System\\Data\\Migration\\CreateTable.cs",
               "RelativeDocumentMoniker": "UnicomTIC_Management_System\\Data\\Migration\\CreateTable.cs",
               "ToolTip": "C:\\Naveen\\C # Project\\Unicom-Managment-System\\UnicomTIC_Management_System\\Data\\Migration\\CreateTable.cs",
               "RelativeToolTip": "UnicomTIC_Management_System\\Data\\Migration\\CreateTable.cs",
-              "ViewState": "AgIAAJUAAAAAAAAAAAAgwKkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAJQAAAAAAAAAAAAAAIoAAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-16T00:35:11.653Z",
+              "WhenOpened": "2025-06-17T19:54:15.015Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Naveen\\C # Project\\Unicom-Managment-System\\UnicomTIC_Management_System\\Program.cs",
-              "RelativeDocumentMoniker": "UnicomTIC_Management_System\\Program.cs",
-              "ToolTip": "C:\\Naveen\\C # Project\\Unicom-Managment-System\\UnicomTIC_Management_System\\Program.cs",
-              "RelativeToolTip": "UnicomTIC_Management_System\\Program.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABAAAAAJAAAAAAAAAA==",
+              "Title": "Admin_Service.cs",
+              "DocumentMoniker": "C:\\Naveen\\C # Project\\Unicom-Managment-System\\UnicomTIC_Management_System\\Service\\Admin_Service.cs",
+              "RelativeDocumentMoniker": "UnicomTIC_Management_System\\Service\\Admin_Service.cs",
+              "ToolTip": "C:\\Naveen\\C # Project\\Unicom-Managment-System\\UnicomTIC_Management_System\\Service\\Admin_Service.cs*",
+              "RelativeToolTip": "UnicomTIC_Management_System\\Service\\Admin_Service.cs*",
+              "ViewState": "AgIAABEAAAAAAAAAAAAgwBQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-16T00:32:44.704Z",
+              "WhenOpened": "2025-06-17T19:29:17.964Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Admin_Form.cs",
+              "DocumentMoniker": "C:\\Naveen\\C # Project\\Unicom-Managment-System\\UnicomTIC_Management_System\\Forms\\Admin_Form.cs",
+              "RelativeDocumentMoniker": "UnicomTIC_Management_System\\Forms\\Admin_Form.cs",
+              "ToolTip": "C:\\Naveen\\C # Project\\Unicom-Managment-System\\UnicomTIC_Management_System\\Forms\\Admin_Form.cs*",
+              "RelativeToolTip": "UnicomTIC_Management_System\\Forms\\Admin_Form.cs*",
+              "ViewState": "AgIAADoAAAAAAAAAAAAEwFoAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-17T13:48:25.859Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "MainForm.cs",
-              "DocumentMoniker": "C:\\Naveen\\C # Project\\Unicom-Managment-System\\UnicomTIC_Management_System\\Forms\\MainForm.cs",
-              "RelativeDocumentMoniker": "UnicomTIC_Management_System\\Forms\\MainForm.cs",
-              "ToolTip": "C:\\Naveen\\C # Project\\Unicom-Managment-System\\UnicomTIC_Management_System\\Forms\\MainForm.cs",
-              "RelativeToolTip": "UnicomTIC_Management_System\\Forms\\MainForm.cs",
-              "ViewState": "AgIAAFIAAAAAAAAAAAAqwGIAAAAZAAAAAAAAAA==",
+              "Title": "Admin_Form.cs [Design]",
+              "DocumentMoniker": "C:\\Naveen\\C # Project\\Unicom-Managment-System\\UnicomTIC_Management_System\\Forms\\Admin_Form.cs",
+              "RelativeDocumentMoniker": "UnicomTIC_Management_System\\Forms\\Admin_Form.cs",
+              "ToolTip": "C:\\Naveen\\C # Project\\Unicom-Managment-System\\UnicomTIC_Management_System\\Forms\\Admin_Form.cs [Design]*",
+              "RelativeToolTip": "UnicomTIC_Management_System\\Forms\\Admin_Form.cs [Design]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-16T00:06:30.071Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-17T13:48:21.749Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "MainForm.cs [Design]",
               "DocumentMoniker": "C:\\Naveen\\C # Project\\Unicom-Managment-System\\UnicomTIC_Management_System\\Forms\\MainForm.cs",
               "RelativeDocumentMoniker": "UnicomTIC_Management_System\\Forms\\MainForm.cs",
               "ToolTip": "C:\\Naveen\\C # Project\\Unicom-Managment-System\\UnicomTIC_Management_System\\Forms\\MainForm.cs [Design]",
               "RelativeToolTip": "UnicomTIC_Management_System\\Forms\\MainForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-15T10:18:56.852Z",
+              "WhenOpened": "2025-06-17T13:23:12.21Z",
               "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Student_Form.cs [Design]",
-              "DocumentMoniker": "C:\\Naveen\\C # Project\\Unicom-Managment-System\\UnicomTIC_Management_System\\Forms\\Student_Form.cs",
-              "RelativeDocumentMoniker": "UnicomTIC_Management_System\\Forms\\Student_Form.cs",
-              "ToolTip": "C:\\Naveen\\C # Project\\Unicom-Managment-System\\UnicomTIC_Management_System\\Forms\\Student_Form.cs [Design]",
-              "RelativeToolTip": "UnicomTIC_Management_System\\Forms\\Student_Form.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-15T13:20:27.321Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Staff_Form.cs [Design]",
-              "DocumentMoniker": "C:\\Naveen\\C # Project\\Unicom-Managment-System\\UnicomTIC_Management_System\\Forms\\Staff_Form.cs",
-              "RelativeDocumentMoniker": "UnicomTIC_Management_System\\Forms\\Staff_Form.cs",
-              "ToolTip": "C:\\Naveen\\C # Project\\Unicom-Managment-System\\UnicomTIC_Management_System\\Forms\\Staff_Form.cs [Design]",
-              "RelativeToolTip": "UnicomTIC_Management_System\\Forms\\Staff_Form.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-15T22:56:25.798Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Room_Form.cs [Design]",
-              "DocumentMoniker": "C:\\Naveen\\C # Project\\Unicom-Managment-System\\UnicomTIC_Management_System\\Forms\\Room_Form.cs",
-              "RelativeDocumentMoniker": "UnicomTIC_Management_System\\Forms\\Room_Form.cs",
-              "ToolTip": "C:\\Naveen\\C # Project\\Unicom-Managment-System\\UnicomTIC_Management_System\\Forms\\Room_Form.cs [Design]",
-              "RelativeToolTip": "UnicomTIC_Management_System\\Forms\\Room_Form.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-15T23:13:27.578Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Mark_Form.cs [Design]",
-              "DocumentMoniker": "C:\\Naveen\\C # Project\\Unicom-Managment-System\\UnicomTIC_Management_System\\Forms\\Mark_Form.cs",
-              "RelativeDocumentMoniker": "UnicomTIC_Management_System\\Forms\\Mark_Form.cs",
-              "ToolTip": "C:\\Naveen\\C # Project\\Unicom-Managment-System\\UnicomTIC_Management_System\\Forms\\Mark_Form.cs [Design]",
-              "RelativeToolTip": "UnicomTIC_Management_System\\Forms\\Mark_Form.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-15T12:49:36.821Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Login_Form.cs [Design]",
-              "DocumentMoniker": "C:\\Naveen\\C # Project\\Unicom-Managment-System\\UnicomTIC_Management_System\\Forms\\Login_Form.cs",
-              "RelativeDocumentMoniker": "UnicomTIC_Management_System\\Forms\\Login_Form.cs",
-              "ToolTip": "C:\\Naveen\\C # Project\\Unicom-Managment-System\\UnicomTIC_Management_System\\Forms\\Login_Form.cs [Design]",
-              "RelativeToolTip": "UnicomTIC_Management_System\\Forms\\Login_Form.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-15T08:09:40.818Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Lecturer_Form.cs [Design]",
-              "DocumentMoniker": "C:\\Naveen\\C # Project\\Unicom-Managment-System\\UnicomTIC_Management_System\\Forms\\Lecturer_Form.cs",
-              "RelativeDocumentMoniker": "UnicomTIC_Management_System\\Forms\\Lecturer_Form.cs",
-              "ToolTip": "C:\\Naveen\\C # Project\\Unicom-Managment-System\\UnicomTIC_Management_System\\Forms\\Lecturer_Form.cs [Design]",
-              "RelativeToolTip": "UnicomTIC_Management_System\\Forms\\Lecturer_Form.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-15T22:22:08.791Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Exam_Form.cs [Design]",
-              "DocumentMoniker": "C:\\Naveen\\C # Project\\Unicom-Managment-System\\UnicomTIC_Management_System\\Forms\\Exam_Form.cs",
-              "RelativeDocumentMoniker": "UnicomTIC_Management_System\\Forms\\Exam_Form.cs",
-              "ToolTip": "C:\\Naveen\\C # Project\\Unicom-Managment-System\\UnicomTIC_Management_System\\Forms\\Exam_Form.cs [Design]",
-              "RelativeToolTip": "UnicomTIC_Management_System\\Forms\\Exam_Form.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-15T12:20:31.267Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Course_Form.cs [Design]",
-              "DocumentMoniker": "C:\\Naveen\\C # Project\\Unicom-Managment-System\\UnicomTIC_Management_System\\Forms\\Course_Form.cs",
-              "RelativeDocumentMoniker": "UnicomTIC_Management_System\\Forms\\Course_Form.cs",
-              "ToolTip": "C:\\Naveen\\C # Project\\Unicom-Managment-System\\UnicomTIC_Management_System\\Forms\\Course_Form.cs [Design]",
-              "RelativeToolTip": "UnicomTIC_Management_System\\Forms\\Course_Form.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-15T22:11:28.934Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Batch_Form.cs [Design]",
-              "DocumentMoniker": "C:\\Naveen\\C # Project\\Unicom-Managment-System\\UnicomTIC_Management_System\\Forms\\Batch_Form.cs",
-              "RelativeDocumentMoniker": "UnicomTIC_Management_System\\Forms\\Batch_Form.cs",
-              "ToolTip": "C:\\Naveen\\C # Project\\Unicom-Managment-System\\UnicomTIC_Management_System\\Forms\\Batch_Form.cs [Design]",
-              "RelativeToolTip": "UnicomTIC_Management_System\\Forms\\Batch_Form.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-15T23:33:02.812Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Admin_Form.cs [Design]",
-              "DocumentMoniker": "C:\\Naveen\\C # Project\\Unicom-Managment-System\\UnicomTIC_Management_System\\Forms\\Admin_Form.cs",
-              "RelativeDocumentMoniker": "UnicomTIC_Management_System\\Forms\\Admin_Form.cs",
-              "ToolTip": "C:\\Naveen\\C # Project\\Unicom-Managment-System\\UnicomTIC_Management_System\\Forms\\Admin_Form.cs [Design]",
-              "RelativeToolTip": "UnicomTIC_Management_System\\Forms\\Admin_Form.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-15T23:03:33.266Z"
             }
           ]
         }

@@ -14,5 +14,9 @@ namespace UnicomTIC_Management_System.Model
         public string Admin_NIC { get; set; }
         public string Admin_Status { get; set; }
 
+        public string User_Name { get; set; }
+        public string Password { get; set; }
+        public string Role { get; set; }
+
     }
 }

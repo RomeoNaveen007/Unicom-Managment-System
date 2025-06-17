@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UnicomTIC_Management_System.Service
+namespace UnicomTIC_Management_System.Controller
 {
-    internal class Attendence_Service
+    internal class Log_Table_Controller
     {
     }
 }

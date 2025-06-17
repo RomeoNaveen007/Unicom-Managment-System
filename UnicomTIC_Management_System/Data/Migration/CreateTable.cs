@@ -23,9 +23,10 @@ namespace UnicomTIC_Management_System.Data.Migration
                                 );
 
                                 CREATE TABLE IF NOT EXISTS User (
-                                    User_ID INTEGER PRIMARY KEY,
+                                    User_ID INTEGER PRIMARY KEY AUTOINCREMENT,
                                     User_Name TEXT NOT NULL UNIQUE,
-                                    Password TEXT NOT NULL
+                                    Password TEXT NOT NULL,
+                                    Role TEXT NOT NULL CHECK (Role IN ('Admin', 'Staff', 'Lecturer', 'Student'))
                                 );
 
                                 CREATE TABLE IF NOT EXISTS Course (
@@ -87,6 +88,8 @@ namespace UnicomTIC_Management_System.Data.Migration
                                     Student_Status TEXT NOT NULL,
                                     CS_ID INTEGER,
                                     Batch_ID INTEGER,
+                                    User_ID INTEGER,
+                                    FOREIGN KEY (User_ID) REFERENCES User (User_ID),
                                     FOREIGN KEY (CS_ID) REFERENCES Course_Subject(CS_ID),
                                     FOREIGN KEY (Batch_ID) REFERENCES Batch(Batch_ID),
                                     CHECK (Student_ID >= 400001 AND Student_ID <= 999999)
@@ -108,6 +111,8 @@ namespace UnicomTIC_Management_System.Data.Migration
                                     Lecturer_NIC TEXT UNIQUE NOT NULL,
                                     Lecturer_Status TEXT NOT NULL,
                                     Special_In TEXT NOT NULL,
+                                    User_ID INTEGER NOT NULL,
+                                    FOREIGN KEY (User_ID) REFERENCES User (User_ID),        
                                     CHECK (Lecturer_ID >= 1000001 AND Lecturer_ID <= 1999999)
                                 );
 
@@ -133,6 +138,8 @@ namespace UnicomTIC_Management_System.Data.Migration
                                     Staff_Address TEXT NOT NULL,
                                     Staff_NIC TEXT UNIQUE NOT NULL,
                                     Staff_Status TEXT NOT NULL,
+                                    User_ID INTEGER NOT NULL,
+                                    FOREIGN KEY (User_ID) REFERENCES User (User_ID),
                                     CHECK (Staff_ID >= 2000001 AND Staff_ID <= 2999999)
                                 );
 
@@ -142,19 +149,46 @@ namespace UnicomTIC_Management_System.Data.Migration
                                     Admin_Address TEXT NOT NULL,
                                     Admin_NIC TEXT UNIQUE NOT NULL,
                                     Admin_Status TEXT NOT NULL,
+                                    User_ID INTEGER NOT NULL,
+                                    FOREIGN KEY (User_ID) REFERENCES User (User_ID),
                                     CHECK (Admin_ID >= 3000001 AND Admin_ID <= 3000199)
                                 );
 
-                                CREATE TABLE IF NOT EXISTS Attendance (
-                                    Attendance_ID INTEGER PRIMARY KEY AUTOINCREMENT,
+                                CREATE TABLE IF NOT EXISTS Student_Attendance (
+                                    Marked_Student_Att INTEGER NOT NULL,
+                                    Marked_Date TEXT NOT NULL,
                                     Attendance_Status TEXT NOT NULL,
-                                    Marked_Student_Att INTEGER,
                                     Timetable_ID INTEGER,
-                                    User_ID INTEGER NOT NULL,
-                                    FOREIGN KEY (User_ID) REFERENCES User(User_ID),
+                                    PRIMARY KEY (Marked_Student_Att, Marked_Date),
                                     FOREIGN KEY (Marked_Student_Att) REFERENCES Student(Student_ID),
-                                    FOREIGN KEY (Timetable_ID) REFERENCES Timetable(Timetable_ID),
-                                    CHECK (Attendance_ID >= 3000201 AND Attendance_ID <= 4099999)
+                                    FOREIGN KEY (Timetable_ID) REFERENCES Timetable(Timetable_ID)
+                                );
+
+                                CREATE TABLE IF NOT EXISTS Lecturer_Attendance (
+                                    Marked_Lecturer_Att INTEGER NOT NULL,
+                                    Marked_Date TEXT NOT NULL,
+                                    Attendance_Status TEXT NOT NULL,
+                                    Timetable_ID INTEGER,
+                                    PRIMARY KEY (Marked_Lecturer_Att, Marked_Date),
+                                    FOREIGN KEY (Marked_Lecturer_Att) REFERENCES Lecturer (Lecturer_ID),
+                                    FOREIGN KEY (Timetable_ID) REFERENCES Timetable(Timetable_ID)
+                                );
+
+                                 CREATE TABLE IF NOT EXISTS Staff_Attendance (
+                                    Marked_Staff_Att INTEGER NOT NULL,
+                                    Marked_Date TEXT NOT NULL,
+                                    Attendance_Status TEXT NOT NULL,
+                                    PRIMARY KEY (Marked_Staff_Att, Marked_Date),
+                                    FOREIGN KEY (Marked_Staff_Att) REFERENCES Staff(Staff_ID)
+                                );
+
+                                CREATE TABLE IF NOT EXISTS Log_Table (
+                                    Log_ID INTEGER PRIMARY KEY AUTOINCREMENT,
+                                    User_ID INTEGER NOT NULL,
+                                    Action TEXT NOT NULL,
+                                    Log_Status TEXT NOT NULL,
+                                    Timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
+                                    FOREIGN KEY (User_ID) REFERENCES User(User_ID)
                                 );
                                 ";
 
