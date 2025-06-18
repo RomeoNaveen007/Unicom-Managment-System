@@ -21,5 +21,15 @@ namespace UnicomTIC_Management_System.Forms
         {
 
         }
+
+        private void button1_MouseClick(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void textBox4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

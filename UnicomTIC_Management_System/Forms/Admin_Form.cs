@@ -114,6 +114,7 @@ namespace UnicomTIC_Management_System.Forms
             {
                 string username = textBox5.Text.Trim();
 
+                
                 /* if (IsUsernameTaken(username))
                  {
                      MessageBox.Show("Username already exists. Please choose another one.", "Duplicate Username", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -161,28 +162,31 @@ namespace UnicomTIC_Management_System.Forms
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
 
-            if (e.RowIndex < 0 || e.ColumnIndex < 0)
+            if (e.RowIndex < 0 || e.ColumnIndex < 0 || e.RowIndex >= dataGridView1.Rows.Count)
                 return;
 
             try
             {
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-
                 object idValue = row.Cells["Admin_ID"].Value;
 
+                // Check if the Admin_ID cell contains a valid integer
                 if (idValue != null && int.TryParse(idValue.ToString(), out int adminId))
                 {
                     Clicked_admin_id = adminId;
 
+                    // Initialize the admin service and fetch admin details
                     admin_service = new Admin_Service();
                     Admin admin = admin_service.Get_Admin_id(adminId);
 
+                    // Populate text boxes with admin details if found
                     if (admin != null)
                     {
                         textBox1.Text = admin.Admin_Name ?? string.Empty;
                         textBox2.Text = admin.Admin_Address ?? string.Empty;
                         textBox3.Text = admin.Admin_NIC ?? string.Empty;
                         textBox5.Text = admin.User_Name ?? string.Empty;
+
                     }
                     else
                     {
