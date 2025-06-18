@@ -23,7 +23,7 @@ namespace UnicomTIC_Management_System.Forms
         private string User_role= string.Empty;
         private Admin_Service admin_service;
         private int Clicked_admin_id = -1;
-
+        private User_Service user_Service;
 
         public Admin_Form()
         {
@@ -32,15 +32,15 @@ namespace UnicomTIC_Management_System.Forms
             get_admin_info();
         }
 
-        public void Findrole()               // shouls add a method in user service table 
+       /* public void Findrole()               // shouls add a method in user service table 
         {
-            _user = new User();
-            User_role = _user.Role;
-        }
+            List<User> user = user_Service.Show_All_Users();
+            User_role = user.Role;
+        }*/
 
         private void get_admin_info()
         {
-            List<Admin> admin = admin_service.show_Output();
+            List<Admin> admin = admin_service.Show_Output();
             dataGridView1.DataSource = admin;
             dataGridView1.ClearSelection();
             ClearInputs();
@@ -65,32 +65,16 @@ namespace UnicomTIC_Management_System.Forms
             return char.ToUpper(input[0]) + input.Substring(1).ToLower();
         }
 
-        private bool IsUsernameTaken(string username)
-        {
-            using (var conn = DB_Config.getConnection())
-            {
-                string query = "SELECT COUNT(*) FROM Users WHERE LOWER(User_Name) = LOWER(@UserName)";
-
-                using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
-                {
-                    cmd.Parameters.AddWithValue("@UserName", username);
-                    int count = (int)cmd.ExecuteScalar();
-                    return count > 0;
-                }
-            }
-        }
 
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
             string inputUsername = textBox5.Text.Trim();
+            User_Service cmd=new User_Service();
+            var users =cmd.Show_All_Users();
 
-            if (string.IsNullOrEmpty(inputUsername))
-            {
-                label5.Text = "";                // optional label to show status
-                return;
-            }
+            bool usernameExists = users.Any(u => u.User_Name.Equals(inputUsername, StringComparison.OrdinalIgnoreCase));
 
-            if (IsUsernameTaken(inputUsername))
+            if (usernameExists)
             {
                 label5.Text = "Username already taken";
                 label5.ForeColor = Color.Red;
@@ -106,22 +90,22 @@ namespace UnicomTIC_Management_System.Forms
 
         private void Admin_Form_Load(object sender, EventArgs e)
         {
-            Findrole();
+            //Findrole();
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
 
-            if (User_role == "Admin" && comboBox1.Text == "Add")
+            if (comboBox1.Text == "Add")
             {
                 string username = textBox5.Text.Trim();
 
-                if (IsUsernameTaken(username))
+               /* if (IsUsernameTaken(username))
                 {
                     MessageBox.Show("Username already exists. Please choose another one.", "Duplicate Username", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
-                }
+                }*/
 
                 Admin admin = new Admin
                 {
@@ -134,7 +118,8 @@ namespace UnicomTIC_Management_System.Forms
                     Role = "Admin"
                 };
 
-                Admin_Service admin_Service = new Admin_Service(admin);
+                Admin_Service admin_Service = new Admin_Service();
+                admin_Service.Addadmin(admin);
 
                 MessageBox.Show("Admin added successfully!\nDefault password: User123@", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 get_admin_info();                            // Refresh DataGridView...............
@@ -144,7 +129,7 @@ namespace UnicomTIC_Management_System.Forms
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && dataGridView1.Rows[e.RowIndex].Cells["ID"].Value != null)
+            if (e.RowIndex > 0 && dataGridView1.Rows[e.RowIndex].Cells["ID"].Value != null)
             {
                 try
                 {
@@ -157,6 +142,8 @@ namespace UnicomTIC_Management_System.Forms
                         textBox2.Text = admin.Admin_Address;
                         textBox3.Text = admin.Admin_NIC;
                         textBox5.Text = admin.User_Name;
+
+
                     }
                 }
                 catch (Exception ex)
@@ -170,6 +157,11 @@ namespace UnicomTIC_Management_System.Forms
         private void label5_Click(object sender, EventArgs e)
         {
 
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }

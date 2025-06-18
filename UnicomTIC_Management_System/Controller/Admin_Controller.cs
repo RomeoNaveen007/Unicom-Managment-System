@@ -14,19 +14,19 @@ namespace UnicomTIC_Management_System.Controller
 
         public Admin_Controller()
         {
-            admin_Service = new Admin_Service();
+            admin_service = new Admin_Service();
 
         }
 
-            public List<Admin> GetAllAdmins() => admin_service.show_Output();
+            public List<Admin> GetAllAdmins() => admin_service.Show_Output();
 
-            public void AddSection(Section section) => _sectionService.Add(section);
+        public void Add_All_Admin(Admin admin) => admin_service.Addadmin(admin);
 
-            //public void UpdateSection(Section section) => _sectionService.Update(section);
+        //public void UpdateSection(Section section) => _sectionService.Update(section);
 
-            //public void DeleteSection(int sectionId) => _sectionService.Delete(sectionId);
+        //public void DeleteSection(int sectionId) => _sectionService.Delete(sectionId);
 
 
 
-        }
+    }
     }
