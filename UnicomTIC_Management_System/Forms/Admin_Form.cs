@@ -20,7 +20,7 @@ namespace UnicomTIC_Management_System.Forms
     public partial class Admin_Form : Form
     {
         private User _user;
-        private string User_role= string.Empty;
+        private string User_role = string.Empty;
         private Admin_Service admin_service;
         private int Clicked_admin_id = -1;
         private User_Service user_Service;
@@ -32,20 +32,32 @@ namespace UnicomTIC_Management_System.Forms
             get_admin_info();
         }
 
-       /* public void Findrole()               // shouls add a method in user service table 
-        {
-            List<User> user = user_Service.Show_All_Users();
-            User_role = user.Role;
-        }*/
+        /* public void Findrole()               // shouls add a method in user service table 
+         {
+             List<User> user = user_Service.Show_All_Users();
+             User_role = user.Role;
+             User_role = user.Role;
+         }*/
 
         private void get_admin_info()
         {
             List<Admin> admin = admin_service.Show_Output();
-            dataGridView1.DataSource = admin;
+
+            var displayList = admin.Select(a => new
+            {
+                Admin_ID = a.Admin_ID,
+                Admin_Name = a.Admin_Name,
+                Admin_Address = a.Admin_Address,
+                Admin_NIC = a.Admin_NIC,
+                User_Name = a.User_Name
+            }).ToList();
+
+            dataGridView1.DataSource = displayList;
+            //  dataGridView1.Columns["Admin_ID"].Visible = false;
             dataGridView1.ClearSelection();
             ClearInputs();
-
         }
+
 
         private void ClearInputs()
         {
@@ -54,6 +66,7 @@ namespace UnicomTIC_Management_System.Forms
             textBox3.Text = "";
             textBox5.Text = "";
             label5.Text = "";
+            comboBox1.Text = "";
 
         }
 
@@ -69,8 +82,8 @@ namespace UnicomTIC_Management_System.Forms
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
             string inputUsername = textBox5.Text.Trim();
-            User_Service cmd=new User_Service();
-            var users =cmd.Show_All_Users();
+            User_Service cmd = new User_Service();
+            var users = cmd.Show_All_Users();
 
             bool usernameExists = users.Any(u => u.User_Name.Equals(inputUsername, StringComparison.OrdinalIgnoreCase));
 
@@ -101,11 +114,11 @@ namespace UnicomTIC_Management_System.Forms
             {
                 string username = textBox5.Text.Trim();
 
-               /* if (IsUsernameTaken(username))
-                {
-                    MessageBox.Show("Username already exists. Please choose another one.", "Duplicate Username", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }*/
+                /* if (IsUsernameTaken(username))
+                 {
+                     MessageBox.Show("Username already exists. Please choose another one.", "Duplicate Username", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                     return;
+                 }*/
 
                 Admin admin = new Admin
                 {
@@ -127,32 +140,6 @@ namespace UnicomTIC_Management_System.Forms
 
         }
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex > 0 && dataGridView1.Rows[e.RowIndex].Cells["ID"].Value != null)
-            {
-                try
-                {
-                    Clicked_admin_id = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["ID"].Value);
-
-                    var admin = admin_service.Get_Admin_id(Clicked_admin_id);
-                    if (admin != null)
-                    {
-                        textBox1.Text = admin.Admin_Name;
-                        textBox2.Text = admin.Admin_Address;
-                        textBox3.Text = admin.Admin_NIC;
-                        textBox5.Text = admin.User_Name;
-
-
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error loading admin details: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-
-        }
 
         private void label5_Click(object sender, EventArgs e)
         {
@@ -162,6 +149,55 @@ namespace UnicomTIC_Management_System.Forms
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
+        }
+
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (e.RowIndex < 0 || e.ColumnIndex < 0)
+                return;
+
+            try
+            {
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+
+                object idValue = row.Cells["Admin_ID"].Value;
+
+                if (idValue != null && int.TryParse(idValue.ToString(), out int adminId))
+                {
+                    Clicked_admin_id = adminId;
+
+                    admin_service = new Admin_Service();
+                    Admin admin = admin_service.Get_Admin_id(adminId);
+
+                    if (admin != null)
+                    {
+                        textBox1.Text = admin.Admin_Name ?? string.Empty;
+                        textBox2.Text = admin.Admin_Address ?? string.Empty;
+                        textBox3.Text = admin.Admin_NIC ?? string.Empty;
+                        textBox5.Text = admin.User_Name ?? string.Empty;
+                    }
+                    else
+                    {
+                        MessageBox.Show("No admin found for this ID.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Invalid Admin ID.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading admin details:\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
     }

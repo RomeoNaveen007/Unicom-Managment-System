@@ -76,16 +76,8 @@ namespace UnicomTIC_Management_System.Service
 
             using (var conn = DB_Config.getConnection())
             {
-                var cmd = new SQLiteCommand(@"
-            SELECT 
-                a.Admin_ID,
-                a.Admin_Name,
-                a.Admin_Address,
-                a.Admin_NIC,
-                a.Admin_Status,
-                u.User_Name
-            FROM Admin a
-            LEFT JOIN User u ON a.User_ID = u.User_ID", conn);
+                var cmd = new SQLiteCommand(@"SELECT a.Admin_ID,a.Admin_Name,a.Admin_Address,a.Admin_NIC,u.User_Name FROM Admin a
+                                                LEFT JOIN User u ON a.User_ID = u.User_ID", conn);
 
                 using (var reader = cmd.ExecuteReader())
                 {
@@ -97,8 +89,7 @@ namespace UnicomTIC_Management_System.Service
                             Admin_Name = reader.GetString(1),
                             Admin_Address = reader.GetString(2),
                             Admin_NIC = reader.GetString(3),
-                            Admin_Status = reader.GetString(4),
-                            User_Name = reader.GetString(5)
+                            User_Name = reader.GetString(4)
                         };
 
                         adminList.Add(admin);
@@ -111,29 +102,33 @@ namespace UnicomTIC_Management_System.Service
         {
             using (var conn = DB_Config.getConnection())
             {
-                using (SQLiteCommand cmd = new SQLiteCommand(@"SELECT a.Admin_Name,a.Admin_Address,a.Admin_NIC,u.User_Name FROM Admin a  LEFT JOIN User u ON a.User_ID = u.User_ID WHERE Admin_ID = @Admin_ID", conn))
-
+               
+                using (SQLiteCommand cmd = new SQLiteCommand(@"
+                                        SELECT a.Admin_Name, a.Admin_Address, a.Admin_NIC, u.User_Name
+                                        FROM Admin a
+                                        LEFT JOIN User u ON a.User_ID = u.User_ID 
+                                        WHERE a.Admin_ID = @Admin_ID", conn))
                 {
                     cmd.Parameters.AddWithValue("@Admin_ID", id);
+
                     using (var reader = cmd.ExecuteReader())
                     {
                         if (reader.Read())
                         {
                             return new Admin
                             {
-                                Admin_Name = reader.GetString(0),
-                                Admin_Address = reader.GetString(1),
-                                Admin_NIC = reader.GetString(2),
-                                User_Name = reader.GetString(3)
+                               
+                                Admin_Name = reader["Admin_Name"]?.ToString(),
+                                Admin_Address = reader["Admin_Address"]?.ToString(),
+                                Admin_NIC = reader["Admin_NIC"]?.ToString(),
+                                User_Name = reader["User_Name"] == DBNull.Value ? null : reader["User_Name"].ToString()
                             };
                         }
                     }
-
                 }
             }
 
             return null;
-
         }
 
 
