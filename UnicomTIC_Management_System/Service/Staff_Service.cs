@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using UnicomTIC_Management_System.Data.DB_Connection;
 using UnicomTIC_Management_System.Model;
 using UnicomTIC_Management_System.Controller;
+using static System.Windows.Forms.AxHost;
 
 
 
@@ -82,7 +83,7 @@ namespace UnicomTIC_Management_System.Service
             using (var conn = DB_Config.getConnection())
             {
                 string query = @"
-            SELECT s.Staff_ID, s.Staff_Name, s.Staff_Address, s.Staff_NIC, u.User_Name
+            SELECT s.Staff_ID, s.Staff_Name, s.Staff_Address, s.Staff_NIC, u.User_Name , s.Staff_Status
             FROM Staff s
             LEFT JOIN [User] u ON s.User_ID = u.User_ID;";
 
@@ -98,7 +99,8 @@ namespace UnicomTIC_Management_System.Service
                                 Staff_Name = reader.GetString(1),
                                 Staff_Address = reader.GetString(2),
                                 Staff_NIC = reader.GetString(3),
-                                User_Name = reader.IsDBNull(4) ? null : reader.GetString(4)
+                                User_Name = reader.IsDBNull(4) ? null : reader.GetString(4),
+                                Staff_Status = reader.GetString(5)
                             });
                         }
                     }
@@ -144,5 +146,51 @@ namespace UnicomTIC_Management_System.Service
         }
 
 
+        public void staff_Update(Staff up_staff)
+        {
+            using (var conn = DB_Config.getConnection())
+            {
+               
+
+                string Up_query = @" UPDATE Staff SET Staff_Name = @Staff_Name,
+                                                Staff_Address = @Staff_Address,
+                                                Staff_NIC = @Staff_NIC 
+                             WHERE Staff_ID = @Staff_ID ; ";
+
+                using (SQLiteCommand cmd = new SQLiteCommand(Up_query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@Staff_Name", up_staff.Staff_Name);
+                    cmd.Parameters.AddWithValue("@Staff_Address", up_staff.Staff_Address);
+                    cmd.Parameters.AddWithValue("@Staff_NIC", up_staff.Staff_NIC);
+                    cmd.Parameters.AddWithValue("@Staff_ID", up_staff.Staff_ID);  // Only once
+
+                    cmd.ExecuteNonQuery();
+
+                    MessageBox.Show($"{up_staff.Staff_Name} Row is Updated successfully...");
+                }
+            }
+        }
+
+        public void Delete_Staff(Staff del_stff)
+        {
+            using (var conn = DB_Config.getConnection())
+            {
+                string del_query = @" UPDATE Staff SET Staff_Status = @Staff_Status
+                                     WHERE Staff_ID = @Staff_ID ; ";
+
+                using (SQLiteCommand cmd = new SQLiteCommand(del_query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@Staff_Status", del_stff.Staff_Status);
+                    cmd.Parameters.AddWithValue("@Staff_ID", del_stff.Staff_ID);  // Only once
+
+                    cmd.ExecuteNonQuery();
+
+                    MessageBox.Show($"{del_stff.Staff_Name} Row is Deleted successfully...");
+
+
+                }
+
+            }
+        }
     }
 }

@@ -24,8 +24,10 @@ namespace UnicomTIC_Management_System.Forms
             InitializeComponent();
             textBox5.Visible = false;
             staff_service = new Staff_Service();
-            SetupDataGridView();
+            //SetupDataGridView();
             get_STaff_info();
+            dataGridView1.CellClick += dataGridView1_CellClick;
+
 
         }
 
@@ -37,7 +39,7 @@ namespace UnicomTIC_Management_System.Forms
             return char.ToUpper(input[0]) + input.Substring(1).ToLower();
         }
 
-        private void SetupDataGridView()
+      /*  private void SetupDataGridView()
         {
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.Columns.Clear();
@@ -82,7 +84,7 @@ namespace UnicomTIC_Management_System.Forms
                 Name = "User_Name"
             });
         }
-
+*/
         private void ClearInputs()
         {
             textBox1.Text = "";
@@ -92,22 +94,34 @@ namespace UnicomTIC_Management_System.Forms
             comboBox1.Text = "";
         }
 
-        private void get_STaff_info()
+        private void get_STaff_info()                               //.............DGV Method ............
         {
             dataGridView1.ReadOnly = true;
-
+            List<Staff> stf = new List<Staff>();
             List<Staff> staff = staff_service.Get_All();
-            dataGridView1.DataSource = staff;
+            
 
-            // Hide unwanted columns
-            foreach (DataGridViewColumn col in dataGridView1.Columns)
+            foreach (Staff st in staff)
             {
-                if (col.Name != "Staff_Name" && col.Name != "Staff_Address" &&
-                    col.Name != "Staff_NIC" && col.Name != "User_Name")
+                if (st.Staff_Status == "Active")
                 {
-                    col.Visible = false;
+                    stf.Add(new Staff
+                    {
+                        Staff_ID = st.Staff_ID,
+                        Staff_Name = st.Staff_Name,
+                        Staff_Address = st.Staff_Address,
+                        Staff_Status = st.Staff_Status,
+                        Staff_NIC = st.Staff_NIC,
+                        User_Name = st.User_Name,
+                        User_ID = st.User_ID,
+                    });
                 }
             }
+            dataGridView1.DataSource = stf;
+            dataGridView1.Columns["Staff_Status"].Visible = false;
+            dataGridView1.Columns["Staff_ID"].Visible = false;
+            dataGridView1.Columns["User_ID"].Visible = false;
+
 
             dataGridView1.ClearSelection();
             ClearInputs();
@@ -151,10 +165,32 @@ namespace UnicomTIC_Management_System.Forms
 
             if (comboBox1.Text == "Update")
             {
+                Staff st = new Staff();
+                st.Staff_ID = Clicked_Staf_id;
+                st.Staff_Name = CapitalizeFirstLetter(textBox1.Text.Trim());
+                st.Staff_Address = CapitalizeFirstLetter(textBox2.Text.Trim());
+                st.Staff_NIC = CapitalizeFirstLetter(textBox3.Text.Trim());
+                
                 staff_service = new Staff_Service();
-                //staff_service.
+                staff_service.staff_Update(st);
+
+                get_STaff_info();
 
             }
+
+            if (comboBox1.Text == "Delete")
+            {
+                Staff staff = new Staff();
+                staff.Staff_ID = Clicked_Staf_id;
+                staff.Staff_Name = CapitalizeFirstLetter(textBox1.Text.Trim());
+                staff.Staff_Status = "Inactive";
+
+                staff_service = new Staff_Service();
+                staff_service.Delete_Staff(staff);
+
+                get_STaff_info();
+            }
+
 
         }
 

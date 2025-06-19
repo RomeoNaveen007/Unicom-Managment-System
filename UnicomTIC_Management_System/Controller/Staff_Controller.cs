@@ -19,6 +19,6 @@ namespace UnicomTIC_Management_System.Controller
 
         public List<Staff> GetAllStaff() => staff_service.Get_All();
         public void AddStaff_DB(Staff staff) => staff_service.GetAll_staff( staff);
-
+        public void update_staff(Staff staff) => staff_service.staff_Update(staff);
     }
 }
