@@ -29,6 +29,14 @@ namespace UnicomTIC_Management_System.Forms
 
         }
 
+        private string CapitalizeFirstLetter(string input)
+        {
+            if (string.IsNullOrWhiteSpace(input))
+                return string.Empty;
+
+            return char.ToUpper(input[0]) + input.Substring(1).ToLower();
+        }
+
         private void SetupDataGridView()
         {
             dataGridView1.AutoGenerateColumns = false;
@@ -86,6 +94,8 @@ namespace UnicomTIC_Management_System.Forms
 
         private void get_STaff_info()
         {
+            dataGridView1.ReadOnly = true;
+
             List<Staff> staff = staff_service.Get_All();
             dataGridView1.DataSource = staff;
 
@@ -125,30 +135,46 @@ namespace UnicomTIC_Management_System.Forms
 
 
                 Staff staff = new Staff();
-                staff.Staff_Name = textBox1.Text;
-                staff.Staff_Address = textBox2.Text;
-                staff.Staff_NIC = textBox3.Text;
-                staff.User_Name = textBox5.Text;
+                staff.Staff_Name = CapitalizeFirstLetter(textBox1.Text.Trim());
+                staff.Staff_Address = CapitalizeFirstLetter(textBox2.Text.Trim());
+                staff.Staff_NIC = CapitalizeFirstLetter(textBox3.Text.Trim());
+                staff.User_Name = CapitalizeFirstLetter(textBox5.Text.Trim());
                 staff.Password = "Staff123@";
                 staff.Role = "Staff";
                 staff.Staff_Status = "Active";
 
-                Staff_Service staff_Service = new Staff_Service(staff);
+                Staff_Service staff_Service = new Staff_Service();
+                staff_Service.GetAll_staff(staff);
 
                 get_STaff_info();
             }
 
+            if (comboBox1.Text == "Update")
+            {
+                staff_service = new Staff_Service();
+                //staff_service.
+
+            }
 
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+
             if (comboBox1.Text == "Add")
             {
                 textBox5.Visible = true;
                 label6.Visible = false;
+                ClearInputs();
+
             }
             else if (comboBox1.Text == "Update" ||  comboBox1.Text == "Delete" )
+            {
+                textBox5.Visible = false;
+                label6.Visible = true;
+            }
+            else if (comboBox1.Text == "")
             {
                 textBox5.Visible = false;
                 label6.Visible = true;
@@ -158,26 +184,7 @@ namespace UnicomTIC_Management_System.Forms
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= -1) // include first row
-            {
-                Clicked_Staf_id = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Staff_ID"].Value);
-
-                var selectedStaff = staff_service.Get_Staff_id(Clicked_Staf_id);
-
-                if (selectedStaff != null)
-                {
-                    textBox1.Text = selectedStaff.Staff_Name;
-                    textBox2.Text = selectedStaff.Staff_Address;
-                    textBox3.Text = selectedStaff.Staff_NIC;
-                    label6.Text = selectedStaff.User_Name;
-                   
-
-                }
-                else
-                {
-                    MessageBox.Show("Staff not found!");
-                }
-            }
+            
 
         }
 
@@ -209,6 +216,35 @@ namespace UnicomTIC_Management_System.Forms
                 label7.Text = "Username available";
                 label7.ForeColor = Color.Green;
             }
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= -1) // include first row
+            {
+                Clicked_Staf_id = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Staff_ID"].Value);
+
+                var selectedStaff = staff_service.Get_Staff_id(Clicked_Staf_id);
+
+                if (selectedStaff != null)
+                {
+                    textBox1.Text = CapitalizeFirstLetter(selectedStaff.Staff_Name);
+                    textBox2.Text = CapitalizeFirstLetter( selectedStaff.Staff_Address); 
+                    textBox3.Text = CapitalizeFirstLetter (selectedStaff.Staff_NIC);
+                    label6.Text = CapitalizeFirstLetter( selectedStaff.User_Name);
+
+
+                }
+                else
+                {
+                    MessageBox.Show("Staff not found!");
+                }
+            }
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

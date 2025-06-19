@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using UnicomTIC_Management_System.Data.DB_Connection;
 using UnicomTIC_Management_System.Model;
+using UnicomTIC_Management_System.Controller;
 
 
 
@@ -20,7 +21,7 @@ namespace UnicomTIC_Management_System.Service
 
         }
 
-        public Staff_Service(Staff staff)
+        public void GetAll_staff(Staff staff)
         {
             using (var conn = DB_Config.getConnection())
             {
