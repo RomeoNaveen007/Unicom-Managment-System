@@ -26,7 +26,7 @@ namespace UnicomTIC_Management_System.Data.Migration
 
                 CREATE TABLE IF NOT EXISTS User(
                 User_ID INTEGER PRIMARY KEY AUTOINCREMENT,
-                User_Name TEXT NOT NULL UNIQUE,
+                User_Name TEXT NOT NULL ,
                 Password TEXT NOT NULL,
                 Role TEXT NOT NULL CHECK(Role IN('Admin', 'Staff', 'Lecturer', 'Student'))
                 );
@@ -133,6 +133,7 @@ namespace UnicomTIC_Management_System.Data.Migration
                     Staff_NIC TEXT UNIQUE NOT NULL,
                     Staff_Status TEXT NOT NULL,
                     User_ID INTEGER NOT NULL,
+                    User_Name TEXT  NOT NULL,
                     FOREIGN KEY (User_ID) REFERENCES User(User_ID)
 );
 

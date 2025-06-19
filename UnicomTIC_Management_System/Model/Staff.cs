@@ -13,6 +13,12 @@ namespace UnicomTIC_Management_System.Model
         public string Staff_Address { get; set; }
         public string Staff_NIC { get; set; }
         public string Staff_Status { get; set; }
+        public int User_ID { get; set; }
+
+        public string User_Name { get; set; }
+        public string Password { get; set; }
+        public string Role { get; set; }    
+
 
     }
 }
