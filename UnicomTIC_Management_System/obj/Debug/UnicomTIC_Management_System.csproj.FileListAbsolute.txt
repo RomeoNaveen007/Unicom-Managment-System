@@ -10,33 +10,6 @@ C:\Naveen\UnicomTIC_Management_System\UnicomTIC_Management_System\obj\Debug\Unic
 C:\Naveen\UnicomTIC_Management_System\UnicomTIC_Management_System\obj\Debug\UnicomTI.3500D1D6.Up2Date
 C:\Naveen\UnicomTIC_Management_System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.exe
 C:\Naveen\UnicomTIC_Management_System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.pdb
-C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\bin\Debug\UnicomTIC_Management_System.exe.config
-C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\bin\Debug\UnicomTIC_Management_System.exe
-C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\bin\Debug\UnicomTIC_Management_System.pdb
-C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\bin\Debug\System.Data.SQLite.dll
-C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\bin\Debug\System.Data.SQLite.xml
-C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.csproj.AssemblyReference.cache
-C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.exe.config
-C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Properties.Resources.resources
-C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.csproj.GenerateResource.cache
-C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.csproj.CoreCompileInputs.cache
-C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTI.3500D1D6.Up2Date
-C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.exe
-C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.pdb
-C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Forms.Admin_Form.resources
-C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Forms.Attendance_Form.resources
-C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Forms.Batch_Form.resources
-C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Forms.Course_Form.resources
-C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Forms.Exam_Form.resources
-C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Forms.Lecturer_Form.resources
-C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Forms.Login_Form.resources
-C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.MainForm.resources
-C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Forms.Mark_Form.resources
-C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Forms.Room_Form.resources
-C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Forms.Staff_Form.resources
-C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Forms.Student_Form.resources
-C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Forms.Subject_Form.resources
-C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Forms.Timetable_Form.resources
 Z:\C#\Project\Unicom-Managment-System\UnicomTIC_Management_System\bin\Debug\UnicomTIC_Management_System.exe.config
 Z:\C#\Project\Unicom-Managment-System\UnicomTIC_Management_System\bin\Debug\UnicomTIC_Management_System.exe
 Z:\C#\Project\Unicom-Managment-System\UnicomTIC_Management_System\bin\Debug\UnicomTIC_Management_System.pdb
@@ -115,3 +88,81 @@ C:\Users\UT010057\Desktop\pro\Unicom-Managment-System\UnicomTIC_Management_Syste
 C:\Users\UT010057\Desktop\pro\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTI.3500D1D6.Up2Date
 C:\Users\UT010057\Desktop\pro\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.exe
 C:\Users\UT010057\Desktop\pro\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.pdb
+C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.csproj.AssemblyReference.cache
+C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Forms.Admin_Form.resources
+C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Forms.Attendance_Form.resources
+C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Forms.Batch_Form.resources
+C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Forms.Course_Form.resources
+C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Forms.Exam_Form.resources
+C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Forms.Lecturer_Form.resources
+C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Forms.Login_Form.resources
+C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.MainForm.resources
+C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Forms.Mark_Form.resources
+C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Forms.Room_Form.resources
+C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Forms.Staff_Form.resources
+C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Forms.Student_Form.resources
+C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Forms.Subject_Form.resources
+C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Forms.Timetable_Form.resources
+C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Properties.Resources.resources
+C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.csproj.GenerateResource.cache
+C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.csproj.CoreCompileInputs.cache
+C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\bin\Debug\UnicomTIC_Management_System.exe.config
+C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\bin\Debug\UnicomTIC_Management_System.exe
+C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\bin\Debug\UnicomTIC_Management_System.pdb
+C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\bin\Debug\System.Data.SQLite.dll
+C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\bin\Debug\System.Data.SQLite.xml
+C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTI.3500D1D6.Up2Date
+C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.exe
+C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.pdb
+Z:\C#\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\bin\Debug\UnicomTIC_Management_System.exe.config
+Z:\C#\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\bin\Debug\UnicomTIC_Management_System.exe
+Z:\C#\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\bin\Debug\UnicomTIC_Management_System.pdb
+Z:\C#\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\bin\Debug\System.Data.SQLite.dll
+Z:\C#\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\bin\Debug\System.Data.SQLite.xml
+Z:\C#\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.csproj.AssemblyReference.cache
+Z:\C#\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Forms.Admin_Form.resources
+Z:\C#\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Forms.Attendance_Form.resources
+Z:\C#\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Forms.Batch_Form.resources
+Z:\C#\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Forms.Course_Form.resources
+Z:\C#\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Forms.Exam_Form.resources
+Z:\C#\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Forms.Lecturer_Form.resources
+Z:\C#\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Forms.Login_Form.resources
+Z:\C#\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.MainForm.resources
+Z:\C#\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Forms.Mark_Form.resources
+Z:\C#\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Forms.Room_Form.resources
+Z:\C#\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Forms.Staff_Form.resources
+Z:\C#\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Forms.Student_Form.resources
+Z:\C#\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Forms.Subject_Form.resources
+Z:\C#\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Forms.Timetable_Form.resources
+Z:\C#\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Properties.Resources.resources
+Z:\C#\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.csproj.GenerateResource.cache
+Z:\C#\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.csproj.CoreCompileInputs.cache
+Z:\C#\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTI.3500D1D6.Up2Date
+Z:\C#\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.exe
+Z:\C#\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.pdb
+Z:\C#\New project\Unicom-Managment-System\UnicomTIC_Management_System\bin\Debug\UnicomTIC_Management_System.exe.config
+Z:\C#\New project\Unicom-Managment-System\UnicomTIC_Management_System\bin\Debug\UnicomTIC_Management_System.exe
+Z:\C#\New project\Unicom-Managment-System\UnicomTIC_Management_System\bin\Debug\UnicomTIC_Management_System.pdb
+Z:\C#\New project\Unicom-Managment-System\UnicomTIC_Management_System\bin\Debug\System.Data.SQLite.dll
+Z:\C#\New project\Unicom-Managment-System\UnicomTIC_Management_System\bin\Debug\System.Data.SQLite.xml
+Z:\C#\New project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.csproj.AssemblyReference.cache
+Z:\C#\New project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Forms.Admin_Form.resources
+Z:\C#\New project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Forms.Attendance_Form.resources
+Z:\C#\New project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Forms.Batch_Form.resources
+Z:\C#\New project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Forms.Course_Form.resources
+Z:\C#\New project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Forms.Exam_Form.resources
+Z:\C#\New project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Forms.Lecturer_Form.resources
+Z:\C#\New project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Forms.Login_Form.resources
+Z:\C#\New project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.MainForm.resources
+Z:\C#\New project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Forms.Mark_Form.resources
+Z:\C#\New project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Forms.Room_Form.resources
+Z:\C#\New project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Forms.Staff_Form.resources
+Z:\C#\New project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Forms.Student_Form.resources
+Z:\C#\New project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Forms.Subject_Form.resources
+Z:\C#\New project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Forms.Timetable_Form.resources
+Z:\C#\New project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Properties.Resources.resources
+Z:\C#\New project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.csproj.GenerateResource.cache
+Z:\C#\New project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.csproj.CoreCompileInputs.cache
+Z:\C#\New project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTI.3500D1D6.Up2Date
+Z:\C#\New project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.exe
+Z:\C#\New project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.pdb

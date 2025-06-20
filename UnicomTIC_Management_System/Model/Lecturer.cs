@@ -14,6 +14,11 @@ namespace UnicomTIC_Management_System.Model
         public string Lecturer_NIC { get; set; }
         public string Lecturer_Status { get; set; }
         public string Special_In { get; set; }
+        public int User_ID { get; set; }
+
+        public string User_Name { get; set; }
+        public string Password { get; set; }
+        public string Role { get; set; }
 
     }
 }

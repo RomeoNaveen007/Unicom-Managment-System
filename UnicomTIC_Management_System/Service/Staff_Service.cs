@@ -192,5 +192,47 @@ namespace UnicomTIC_Management_System.Service
 
             }
         }
+
+        public List<Staff> Get_searched_staff_name(string st_name)
+        {
+            List<Staff> search_staffs = new List<Staff>();
+
+            using (var conn = DB_Config.getConnection())
+            {
+                using (SQLiteCommand cmd = new SQLiteCommand(@"
+                                                                SELECT s.Staff_ID, s.Staff_Name, s.Staff_Address, s.Staff_NIC, 
+                                                                       u.User_Name, s.Staff_Status
+                                                                FROM Staff s
+                                                                LEFT JOIN [User] u ON s.User_ID = u.User_ID
+                                                                WHERE LOWER(s.Staff_Name) LIKE '%' || LOWER(@Staff_Name) || '%'", conn))
+                {
+                    cmd.Parameters.AddWithValue("@Staff_Name", st_name);
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            search_staffs.Add(new Staff
+                            {
+                                Staff_ID = reader.GetInt32(0),
+                                Staff_Name = reader.GetString(1),
+                                Staff_Address = reader.GetString(2),
+                                Staff_NIC = reader.GetString(3),
+                                User_Name = reader.IsDBNull(4) ? null : reader.GetString(4),
+                                Staff_Status = reader.GetString(5)
+
+                            });
+
+
+                        }
+
+                    }
+
+
+                }
+            }
+            return search_staffs;
+        }
+
     }
 }

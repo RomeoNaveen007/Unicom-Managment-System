@@ -39,59 +39,18 @@ namespace UnicomTIC_Management_System.Forms
             return char.ToUpper(input[0]) + input.Substring(1).ToLower();
         }
 
-      /*  private void SetupDataGridView()
-        {
-            dataGridView1.AutoGenerateColumns = false;
-            dataGridView1.Columns.Clear();
-
-            // Staff_ID
-            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                HeaderText = "Staff ID",
-                DataPropertyName = "Staff_ID",
-                Name = "Staff_ID"
-            });
-
-            // Staff_Name
-            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                HeaderText = "Staff Name",
-                DataPropertyName = "Staff_Name",
-                Name = "Staff_Name"
-            });
-
-            // Staff_Address
-            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                HeaderText = "Staff Address",
-                DataPropertyName = "Staff_Address",
-                Name = "Staff_Address"
-            });
-
-            // Staff_NIC
-            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                HeaderText = "Staff NIC",
-                DataPropertyName = "Staff_NIC",
-                Name = "Staff_NIC"
-            });
-
-            // User_Name
-            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                HeaderText = "User Name",
-                DataPropertyName = "User_Name",
-                Name = "User_Name"
-            });
-        }
-*/
+      
         private void ClearInputs()
         {
             textBox1.Text = "";
             textBox2.Text = "";
             textBox3.Text = "";
+            textBox4.Text = "";
             textBox5.Text = "";
             comboBox1.Text = "";
+            label6.Text = string.Empty;
+            label7.Text = string.Empty;
+
         }
 
         private void get_STaff_info()                               //.............DGV Method ............
@@ -121,7 +80,8 @@ namespace UnicomTIC_Management_System.Forms
             dataGridView1.Columns["Staff_Status"].Visible = false;
             dataGridView1.Columns["Staff_ID"].Visible = false;
             dataGridView1.Columns["User_ID"].Visible = false;
-
+            dataGridView1.Columns["Password"].Visible = false;
+            dataGridView1.Columns["Role"].Visible = false;
 
             dataGridView1.ClearSelection();
             ClearInputs();
@@ -203,17 +163,20 @@ namespace UnicomTIC_Management_System.Forms
                 textBox5.Visible = true;
                 label6.Visible = false;
                 ClearInputs();
+                get_STaff_info();
 
             }
             else if (comboBox1.Text == "Update" ||  comboBox1.Text == "Delete" )
             {
                 textBox5.Visible = false;
                 label6.Visible = true;
+                get_STaff_info();
             }
             else if (comboBox1.Text == "")
             {
                 textBox5.Visible = false;
                 label6.Visible = true;
+                get_STaff_info();
             }
             
         }
@@ -282,5 +245,55 @@ namespace UnicomTIC_Management_System.Forms
         {
 
         }
-    }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string search_name = textBox4.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(search_name))
+            {
+                MessageBox.Show("Please enter a name to search.");
+                return;
+            }
+
+            // Get matching staff from DB
+            List<Staff> allMatched = staff_service.Get_searched_staff_name(search_name);
+
+            // Filter for only active staff
+            List<Staff> activeMatched = allMatched
+                .Where(st => st.Staff_Status == "Active")
+                .Select(st => new Staff
+                {
+                    Staff_ID = st.Staff_ID,
+                    Staff_Name = st.Staff_Name,
+                    Staff_Address = st.Staff_Address,
+                    Staff_NIC = st.Staff_NIC,
+                    Staff_Status = st.Staff_Status,
+                    User_Name = st.User_Name,
+                    User_ID = st.User_ID
+                })
+                .ToList();
+
+            // Update the DataGridView
+            dataGridView1.ReadOnly = true;
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = activeMatched;
+
+            // Hide unwanted columns if they exist
+            if (dataGridView1.Columns.Contains("Staff_Status")) dataGridView1.Columns["Staff_Status"].Visible = false;
+            if (dataGridView1.Columns.Contains("Staff_ID")) dataGridView1.Columns["Staff_ID"].Visible = false;
+            if (dataGridView1.Columns.Contains("User_ID")) dataGridView1.Columns["User_ID"].Visible = false;
+            if (dataGridView1.Columns.Contains("Password")) dataGridView1.Columns["Password"].Visible = false;
+            if (dataGridView1.Columns.Contains("Role")) dataGridView1.Columns["Role"].Visible = false;
+
+            dataGridView1.ClearSelection();
+            ClearInputs();
+
+            if (activeMatched.Count == 0)
+            {
+                MessageBox.Show("No active staff found with that name.");
+            }
+        }
+    }    
+
 }
