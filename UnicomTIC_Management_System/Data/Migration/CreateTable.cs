@@ -34,7 +34,8 @@ namespace UnicomTIC_Management_System.Data.Migration
                 CREATE TABLE IF NOT EXISTS Course(
                     Course_ID INTEGER PRIMARY KEY AUTOINCREMENT,
                     Course_Name TEXT NOT NULL UNIQUE,
-                    Duration TEXT NOT NULL
+                    Duration TEXT NOT NULL,
+                    Course_Status TEXT NOT NULL
                 );
 
                 CREATE TABLE IF NOT EXISTS Subject(
