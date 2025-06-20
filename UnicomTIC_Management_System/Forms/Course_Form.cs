@@ -108,6 +108,14 @@ namespace UnicomTIC_Management_System.Forms
 
             if (comboBox1.Text == "Update")
             {
+                if (Clicked_Course_ID == -1)
+                {
+                    MessageBox.Show("Please select a course from the list first.");
+                    ClearInputs();
+                    label6.Visible = false;
+                    return;
+                }
+
                 Course course = new Course();
                 course.Course_ID = Clicked_Course_ID;
                 course.Course_Name = CapitalizeFirstLetter(textBox1.Text.Trim());
@@ -117,11 +125,21 @@ namespace UnicomTIC_Management_System.Forms
                 courseService.Update_Course(course);
                 Get_Course_Info();
                 label6.Visible = false;
+                Clicked_Course_ID = -1;
             }
 
 
             if (comboBox1.Text == "Delete")
             {
+
+                if (Clicked_Course_ID == -1)
+                {
+                    MessageBox.Show("Please select a course from the list first.");
+                    ClearInputs();
+                    label6.Visible = false;
+                    return;
+                }
+
                 Course course = new Course();
                 course.Course_ID = Clicked_Course_ID;
                 course.Course_Status = "Inactive";
@@ -130,6 +148,8 @@ namespace UnicomTIC_Management_System.Forms
                 courseService.Delete_Course(course);
                 Get_Course_Info();
                 label6.Visible = false;
+                Clicked_Course_ID = -1;
+
             }
 
         }
@@ -207,7 +227,6 @@ namespace UnicomTIC_Management_System.Forms
 
             if (comboBox1.Text == "Add")
             {
-                
                 
                 Get_Course_Info();        // Refresh DataGridView
             }

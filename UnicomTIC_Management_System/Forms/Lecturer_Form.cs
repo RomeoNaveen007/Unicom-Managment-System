@@ -190,6 +190,8 @@ namespace UnicomTIC_Management_System.Forms
 
             if (comboBox2.Text == "Add")
             {
+                
+
                 Lecturer lecturer = new Lecturer();
                 lecturer.Lecturer_Name = CapitalizeFirstLetter(textBox1.Text.Trim());
                 lecturer.Lecturer_Address = CapitalizeFirstLetter(textBox2.Text.Trim());
@@ -208,6 +210,12 @@ namespace UnicomTIC_Management_System.Forms
 
             if (comboBox2.Text == "Update")
             {
+                if (Clicked_Lecturer_ID == -1)
+                {
+                    MessageBox.Show("Please select a Lecturer from the list before deleting.");
+                    ClearInputs();
+                    return;
+                }
                 Lecturer lecturer = new Lecturer();
                 lecturer.Lecturer_ID = Clicked_Lecturer_ID;
                 lecturer.Lecturer_Name = CapitalizeFirstLetter(textBox1.Text.Trim());
@@ -219,10 +227,18 @@ namespace UnicomTIC_Management_System.Forms
                 lecturerService.Update_Lecturer(lecturer); // Use an appropriate method name
 
                 Get_Lecturer_Info();
+                Clicked_Lecturer_ID = -1;
             }
 
             if (comboBox2.Text == "Delete")
             {
+                if (Clicked_Lecturer_ID == -1)
+                {
+                    MessageBox.Show("Please select a Lecturer from the list before deleting.");
+                    ClearInputs();
+                    return;
+                }
+
                 Lecturer lecturer = new Lecturer();
                 lecturer.Lecturer_ID = Clicked_Lecturer_ID;
                 lecturer.Lecturer_Status = "Inactive";
@@ -231,6 +247,8 @@ namespace UnicomTIC_Management_System.Forms
                 lecturerService.Delete_Lecturer(lecturer); // Use soft delete logic
 
                 Get_Lecturer_Info();
+                Clicked_Lecturer_ID = -1;
+
             }
         }
 

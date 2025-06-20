@@ -34,7 +34,9 @@ namespace UnicomTIC_Management_System.Forms
 
         private void ClearInputs() 
         {
+            comboBox1.Text = string.Empty;
             textBox1.Text= string.Empty;
+            label3.Text = string.Empty;
         }
 
         private void Get_Subject_Info()
@@ -54,7 +56,22 @@ namespace UnicomTIC_Management_System.Forms
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
 
+            if (comboBox1.Text == "Add")
+            {
+                ClearInputs();
+                Get_Subject_Info();        // Refresh DataGridView
+            }
+            else if (comboBox1.Text == "Update" || comboBox1.Text == "Delete")
+            {
+                ClearInputs();
+                Get_Subject_Info();        // Refresh DataGridView
+            }
+            else if (string.IsNullOrEmpty(comboBox1.Text))
+            {
+                Get_Subject_Info();        // Refresh DataGridView
+            }
         }
 
         private void Subject_Form_Load(object sender, EventArgs e)
@@ -107,6 +124,7 @@ namespace UnicomTIC_Management_System.Forms
                 if (Clicked_Subject_ID == -1)
                 {
                     MessageBox.Show("Please select a subject from the list first.");
+                    ClearInputs();
                     return;
                 }
 
@@ -128,6 +146,7 @@ namespace UnicomTIC_Management_System.Forms
                 if (Clicked_Subject_ID == -1)
                 {
                     MessageBox.Show("Please select a subject from the list before deleting.");
+                    ClearInputs();
                     return;
                 }
 

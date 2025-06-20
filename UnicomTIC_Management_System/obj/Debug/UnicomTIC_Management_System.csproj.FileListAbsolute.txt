@@ -166,3 +166,4 @@ Z:\C#\New project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\
 Z:\C#\New project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTI.3500D1D6.Up2Date
 Z:\C#\New project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.exe
 Z:\C#\New project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.pdb
+C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.exe.config

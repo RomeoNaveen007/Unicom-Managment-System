@@ -86,6 +86,7 @@ namespace UnicomTIC_Management_System.Data.Migration
                     CS_ID INTEGER,
                     Batch_ID INTEGER,
                     User_ID INTEGER NOT NULL,
+                    User_Name TEXT  NOT NULL,
                     FOREIGN KEY (User_ID) REFERENCES User(User_ID),
                     FOREIGN KEY(CS_ID) REFERENCES Course_Subject(CS_ID),
                     FOREIGN KEY(Batch_ID) REFERENCES Batch(Batch_ID)
@@ -108,6 +109,7 @@ namespace UnicomTIC_Management_System.Data.Migration
                     Lecturer_Status TEXT NOT NULL,
                     Special_In TEXT NOT NULL,
                     User_ID INTEGER NOT NULL,
+                    User_Name TEXT  NOT NULL,
                     FOREIGN KEY (User_ID) REFERENCES User(User_ID)
 );
 
@@ -145,6 +147,7 @@ namespace UnicomTIC_Management_System.Data.Migration
                     Admin_NIC TEXT UNIQUE NOT NULL,
                     Admin_Status TEXT NOT NULL,
                     User_ID INTEGER NOT NULL,
+                    User_Name TEXT  NOT NULL,
                     FOREIGN KEY (User_ID) REFERENCES User(User_ID)
 );
 

@@ -18,13 +18,13 @@ namespace UnicomTIC_Management_System.Controller
 
         }
 
-            public List<Admin> GetAllAdmins() => admin_service.Show_Output();
+        public List<Admin> GetAllAdmins() => admin_service.Get_All();
 
         public void Add_All_Admin(Admin admin) => admin_service.Addadmin(admin);
 
-        //public void UpdateSection(Section section) => _sectionService.Update(section);
+        public void UpdateSection(Admin up_admin) => admin_service.Updateadmin(up_admin);
 
-        //public void DeleteSection(int sectionId) => _sectionService.Delete(sectionId);
+        public void DeleteSection(Admin del_admin) => admin_service.Deleteadmin(del_admin);
 
 
 

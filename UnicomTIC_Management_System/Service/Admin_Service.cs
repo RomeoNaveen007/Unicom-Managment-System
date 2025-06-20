@@ -17,9 +17,7 @@ namespace UnicomTIC_Management_System.Service
         {
 
         }
-       
-
-        public void Addadmin (Admin ad)        // Adding Admim in admin table and in user table........
+        public void Addadmin(Admin admin)
         {
             using (var conn = DB_Config.getConnection())
             {
@@ -27,101 +25,122 @@ namespace UnicomTIC_Management_System.Service
                 {
                     try
                     {
-                        int userId;
-                    using (var userCmd = new SQLiteCommand(@"
-                        INSERT INTO User (User_Name, Password, Role)
-                        VALUES (@User_Name, @Password, @Role);
-                        SELECT last_insert_rowid();", conn, transaction)) // ✅ pass the transaction
-                        {
-                            userCmd.Parameters.AddWithValue("@User_Name", ad.User_Name);
-                            userCmd.Parameters.AddWithValue("@Password", ad.Password);
-                            userCmd.Parameters.AddWithValue("@Role", ad.Role);
+                        string user_query = @"INSERT INTO [User] (User_Name, Password, Role) 
+                                        VALUES (@User_Name, @Password, @Role); 
+                                        SELECT last_insert_rowid();";
 
-                            userId = Convert.ToInt32(userCmd.ExecuteScalar());
+                        long userId;
+
+                        using (var user_cmd = new SQLiteCommand(user_query, conn, transaction))
+                        {
+                            user_cmd.Parameters.AddWithValue("@User_Name", admin.User_Name);
+                            user_cmd.Parameters.AddWithValue("@Password", admin.Password);
+                            user_cmd.Parameters.AddWithValue("@Role", admin.Role);
+
+                            userId = (long)user_cmd.ExecuteScalar(); // Fetch newly created User_ID
                         }
 
+                        string admin_query = @"INSERT INTO Admin (Admin_Name, Admin_Address, Admin_NIC, Admin_Status, User_Name, User_ID) 
+                                        VALUES (@Admin_Name, @Admin_Address, @Admin_NIC, @Admin_Status, @User_Name, @User_ID);";
 
-                        using (var adminCmd = new SQLiteCommand(@"
-                            INSERT INTO Admin (Admin_Name, Admin_Address, Admin_NIC, Admin_Status, User_ID)
-                            VALUES (@Admin_Name, @Admin_Address, @Admin_NIC, @Admin_Status, @User_ID);", conn, transaction)) // ✅ pass the transaction
-                                    {
-                                        adminCmd.Parameters.AddWithValue("@Admin_Name", ad.Admin_Name);
-                                        adminCmd.Parameters.AddWithValue("@Admin_Address", ad.Admin_Address);
-                                        adminCmd.Parameters.AddWithValue("@Admin_NIC", ad.Admin_NIC);
-                                        adminCmd.Parameters.AddWithValue("@Admin_Status", ad.Admin_Status);
-                                        adminCmd.Parameters.AddWithValue("@User_ID", userId);
+                        using (var admin_cmd = new SQLiteCommand(admin_query, conn, transaction))
+                        {
+                            admin_cmd.Parameters.AddWithValue("@Admin_Name", admin.Admin_Name);
+                            admin_cmd.Parameters.AddWithValue("@Admin_Address", admin.Admin_Address);
+                            admin_cmd.Parameters.AddWithValue("@Admin_NIC", admin.Admin_NIC);
+                            admin_cmd.Parameters.AddWithValue("@Admin_Status", admin.Admin_Status);
+                            admin_cmd.Parameters.AddWithValue("@User_Name", admin.User_Name);
+                            admin_cmd.Parameters.AddWithValue("@User_ID", userId);
 
-                                        adminCmd.ExecuteNonQuery();
-                                    }
-                        transaction.Commit(); // ✅ Only call this after successful operations
-                        MessageBox.Show("Admin added successfully!");
+                            admin_cmd.ExecuteNonQuery();
+                        }
+
+                        transaction.Commit();
+                        MessageBox.Show($"{admin.Admin_Name} added to admin table successfully.");
                     }
-
                     catch (Exception ex)
                     {
-                        transaction.Rollback(); // ❌ Rollback if anything fails
-                        MessageBox.Show("Failed to add admin: " + ex.Message);
+                        transaction.Rollback();
+                        MessageBox.Show("Error: " + ex.Message);
                     }
-
                 }
-
             }
-            
+        }
+
+        public bool IsUsernameTaken(string username)
+        {
+            using (var conn = DB_Config.getConnection())
+            {
+                string query = "SELECT COUNT(*) FROM [User] WHERE LOWER(User_Name) = LOWER(@User_Name)";
+
+                using (var cmd = new SQLiteCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@User_Name", username);
+
+                    long count = (long)cmd.ExecuteScalar();
+                    return count > 0;
+                }
+            }
         }
 
 
-        public List<Admin> Show_Output()
+        public List<Admin> Get_All()
         {
             List<Admin> adminList = new List<Admin>();
 
             using (var conn = DB_Config.getConnection())
             {
-                var cmd = new SQLiteCommand(@"SELECT a.Admin_ID,a.Admin_Name,a.Admin_Address,a.Admin_NIC,u.User_Name FROM Admin a
-                                                LEFT JOIN User u ON a.User_ID = u.User_ID", conn);
+                string query = @"SELECT a.Admin_ID, a.Admin_Name, a.Admin_Address, a.Admin_NIC, u.User_Name, a.Admin_Status
+                            FROM Admin a
+                            LEFT JOIN [User] u ON a.User_ID = u.User_ID;";
 
-                using (var reader = cmd.ExecuteReader())
+                using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
                 {
-                    while (reader.Read())
+                    using (SQLiteDataReader reader = cmd.ExecuteReader())
                     {
-                        Admin admin = new Admin
+                        while (reader.Read())
                         {
-                            Admin_ID = reader.GetInt32(0),
-                            Admin_Name = reader.GetString(1),
-                            Admin_Address = reader.GetString(2),
-                            Admin_NIC = reader.GetString(3),
-                            User_Name = reader.GetString(4)
-                        };
-
-                        adminList.Add(admin);
+                            adminList.Add(new Admin
+                            {
+                                Admin_ID = reader.GetInt32(0),
+                                Admin_Name = reader.GetString(1),
+                                Admin_Address = reader.GetString(2),
+                                Admin_NIC = reader.GetString(3),
+                                User_Name = reader.IsDBNull(4) ? null : reader.GetString(4),
+                                Admin_Status = reader.GetString(5)
+                            });
+                        }
                     }
                 }
             }
+
             return adminList;
         }
-        public Admin Get_Admin_id(int id)
+
+        public Admin Get_Admin_By_ID(int id)
         {
             using (var conn = DB_Config.getConnection())
             {
-               
-                using (SQLiteCommand cmd = new SQLiteCommand(@"
-                                        SELECT a.Admin_Name, a.Admin_Address, a.Admin_NIC, u.User_Name
-                                        FROM Admin a
-                                        LEFT JOIN User u ON a.User_ID = u.User_ID 
-                                        WHERE a.Admin_ID = @Admin_ID", conn))
-                {
-                    cmd.Parameters.AddWithValue("@Admin_ID", id);
+                string query = @"SELECT a.Admin_ID, a.Admin_Name, a.Admin_Address, a.Admin_NIC, u.User_Name
+                            FROM Admin a
+                            LEFT JOIN [User] u ON a.User_ID = u.User_ID
+                            WHERE a.Admin_ID = @Id";
 
-                    using (var reader = cmd.ExecuteReader())
+                using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@Id", id);
+
+                    using (SQLiteDataReader reader = cmd.ExecuteReader())
                     {
                         if (reader.Read())
                         {
                             return new Admin
                             {
-                               
-                                Admin_Name = reader["Admin_Name"]?.ToString(),
-                                Admin_Address = reader["Admin_Address"]?.ToString(),
-                                Admin_NIC = reader["Admin_NIC"]?.ToString(),
-                                User_Name = reader["User_Name"] == DBNull.Value ? null : reader["User_Name"].ToString()
+                                Admin_ID = reader.GetInt32(0),
+                                Admin_Name = reader.GetString(1),
+                                Admin_Address = reader.GetString(2),
+                                Admin_NIC = reader.GetString(3),
+                                User_Name = reader.IsDBNull(4) ? null : reader.GetString(4)
                             };
                         }
                     }
@@ -131,6 +150,85 @@ namespace UnicomTIC_Management_System.Service
             return null;
         }
 
+        public void Updateadmin(Admin up_admin)
+        {
+            using (var conn = DB_Config.getConnection())
+            {
+                string up_query = @"UPDATE Admin SET 
+                            Admin_Name = @Admin_Name,
+                            Admin_Address = @Admin_Address,
+                            Admin_NIC = @Admin_NIC
+                            WHERE Admin_ID = @Admin_ID;";
+
+                using (SQLiteCommand cmd = new SQLiteCommand(up_query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@Admin_Name", up_admin.Admin_Name);
+                    cmd.Parameters.AddWithValue("@Admin_Address", up_admin.Admin_Address);
+                    cmd.Parameters.AddWithValue("@Admin_NIC", up_admin.Admin_NIC);
+                    cmd.Parameters.AddWithValue("@Admin_ID", up_admin.Admin_ID);
+
+                    cmd.ExecuteNonQuery();
+
+                    MessageBox.Show($"{up_admin.Admin_Name} has been updated successfully.");
+                }
+            }
+        }
+
+        public void Deleteadmin(Admin del_admin)
+        {
+            using (var conn = DB_Config.getConnection())
+            {
+                string del_query = @"UPDATE Admin SET Admin_Status = @Admin_Status 
+                                WHERE Admin_ID = @Admin_ID;";
+
+                using (SQLiteCommand cmd = new SQLiteCommand(del_query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@Admin_Status", del_admin.Admin_Status);
+                    cmd.Parameters.AddWithValue("@Admin_ID", del_admin.Admin_ID);
+
+                    cmd.ExecuteNonQuery();
+
+                    MessageBox.Show($"{del_admin.Admin_Name} has been marked as Inactive.");
+                }
+            }
+        }
+
+        public List<Admin> Search_Admin_By_Name(string adminName)
+        {
+            List<Admin> search_admins = new List<Admin>();
+
+            using (var conn = DB_Config.getConnection())
+            {
+                string query = @"SELECT a.Admin_ID, a.Admin_Name, a.Admin_Address, a.Admin_NIC, 
+                                u.User_Name, a.Admin_Status
+                            FROM Admin a
+                            LEFT JOIN [User] u ON a.User_ID = u.User_ID
+                            WHERE LOWER(a.Admin_Name) LIKE '%' || LOWER(@Admin_Name) || '%'";
+
+                using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@Admin_Name", adminName);
+
+                    using (SQLiteDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            search_admins.Add(new Admin
+                            {
+                                Admin_ID = reader.GetInt32(0),
+                                Admin_Name = reader.GetString(1),
+                                Admin_Address = reader.GetString(2),
+                                Admin_NIC = reader.GetString(3),
+                                User_Name = reader.IsDBNull(4) ? null : reader.GetString(4),
+                                Admin_Status = reader.GetString(5)
+                            });
+                        }
+                    }
+                }
+            }
+
+            return search_admins;
+        }
 
     }
 }
