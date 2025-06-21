@@ -12,5 +12,7 @@ namespace UnicomTIC_Management_System.Model
         public int Cousre_ID { get; set; }
         public string Subject_ID { get; set; }
 
+        public string Subject_Name { get; set; }
+        public string Course_Name { get; set; }
     }
 }

@@ -11,6 +11,7 @@ namespace UnicomTIC_Management_System.Model
         public int Batch_ID { get; set; }
         public string Batch_Name { get; set; }
         public int Year { get; set; }
+        public string Batch_Status { get; set; }
 
     }
 }

@@ -41,8 +41,8 @@ namespace UnicomTIC_Management_System.Forms
             textBox5.Text = ""; // User_Name
             textBox6.Text = "";
             comboBox2.Text = "";
-            label7.Text = string.Empty;
-            label8.Text = string.Empty;
+            label7.Text = "";
+            label8.Text = "";
         }
 
         private void Get_Lecturer_Info()  // Loads lecturer data into DataGridView
@@ -259,7 +259,8 @@ namespace UnicomTIC_Management_System.Forms
             if (comboBox2.Text == "Add")
             {
                 textBox5.Visible = true;    // Show User_Name input when adding
-                label8.Visible = false;    
+                label8.Visible = false; 
+                label7.Visible = true;
                 ClearInputs();              // Clear form inputs
                 Get_Lecturer_Info();        // Refresh DataGridView
             }
@@ -284,7 +285,7 @@ namespace UnicomTIC_Management_System.Forms
             string inputUsername = textBox5.Text.Trim();
             User_Service cmd = new User_Service();
             var users = cmd.Show_All_Users();
-
+            
             bool usernameExists = users.Any(u => u.User_Name.Equals(inputUsername, StringComparison.OrdinalIgnoreCase));
 
             if (usernameExists)
@@ -297,6 +298,11 @@ namespace UnicomTIC_Management_System.Forms
                 label7.Text = "Username available";
                 label7.ForeColor = Color.Green;
             }
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

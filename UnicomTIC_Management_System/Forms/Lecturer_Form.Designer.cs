@@ -198,9 +198,10 @@
             // 
             this.label7.Location = new System.Drawing.Point(355, 164);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(100, 20);
+            this.label7.Size = new System.Drawing.Size(158, 19);
             this.label7.TabIndex = 23;
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label8
             // 

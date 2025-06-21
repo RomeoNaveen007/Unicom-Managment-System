@@ -4,6 +4,7 @@ using System.Data.SQLite;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using UnicomTIC_Management_System.Data.DB_Connection;
 using UnicomTIC_Management_System.Model;
 
@@ -15,26 +16,33 @@ namespace UnicomTIC_Management_System.Service
         {
             List<User> users = new List<User>();
 
-            using (var conn = DB_Config.getConnection())
+            try
             {
-                string query = @"SELECT User_ID, User_Name, Password, Role FROM User;";
-
-                using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
+                using (var conn = DB_Config.getConnection())
                 {
-                    using (SQLiteDataReader reader = cmd.ExecuteReader())
+                    string query = @"SELECT User_ID, User_Name, Password, Role FROM User;";
+
+                    using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
                     {
-                        while (reader.Read())
+                        using (SQLiteDataReader reader = cmd.ExecuteReader())
                         {
-                            users.Add(new User
+                            while (reader.Read())
                             {
-                                User_ID = reader.GetInt32(0),
-                                User_Name = reader.GetString(1),
-                                Password = reader.GetString(2),
-                                Role = reader.GetString(3)
-                            });
+                                users.Add(new User
+                                {
+                                    User_ID = reader.GetInt32(0),
+                                    User_Name = reader.GetString(1),
+                                    Password = reader.GetString(2),
+                                    Role = reader.GetString(3)
+                                });
+                            }
                         }
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading users: " + ex.Message);
             }
 
             return users;

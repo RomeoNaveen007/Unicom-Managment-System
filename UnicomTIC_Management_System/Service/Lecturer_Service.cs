@@ -46,9 +46,9 @@ namespace UnicomTIC_Management_System.Service
                         // Insert Lecturer record using the User_ID as foreign key
                         string lecturerQuery = @"
                     INSERT INTO Lecturer 
-                    (Lecturer_Name, Lecturer_Address, Lecturer_NIC, Lecturer_Status, Special_In, User_ID) 
+                    (Lecturer_Name, Lecturer_Address, Lecturer_NIC, Lecturer_Status, Special_In, User_ID,User_Name) 
                     VALUES 
-                    (@Lecturer_Name, @Lecturer_Address, @Lecturer_NIC, @Lecturer_Status, @Special_In, @User_ID);";
+                    (@Lecturer_Name, @Lecturer_Address, @Lecturer_NIC, @Lecturer_Status, @Special_In, @User_ID,@User_Name);";
 
                         using (var lecturerCmd = new SQLiteCommand(lecturerQuery, conn, transaction))
                         {
@@ -57,6 +57,7 @@ namespace UnicomTIC_Management_System.Service
                             lecturerCmd.Parameters.AddWithValue("@Lecturer_NIC", lecturer.Lecturer_NIC);
                             lecturerCmd.Parameters.AddWithValue("@Lecturer_Status", lecturer.Lecturer_Status);
                             lecturerCmd.Parameters.AddWithValue("@Special_In", lecturer.Special_In);
+                            lecturerCmd.Parameters.AddWithValue("@User_Name", lecturer.User_Name);
                             lecturerCmd.Parameters.AddWithValue("@User_ID", userId);
 
                             lecturerCmd.ExecuteNonQuery();

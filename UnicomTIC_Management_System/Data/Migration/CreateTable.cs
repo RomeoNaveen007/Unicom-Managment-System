@@ -40,13 +40,14 @@ namespace UnicomTIC_Management_System.Data.Migration
 
                 CREATE TABLE IF NOT EXISTS Subject(
                     Subject_ID INTEGER PRIMARY KEY AUTOINCREMENT,
-                    Subject_Name TEXT NOT NULL
                 );
 
                 CREATE TABLE IF NOT EXISTS Course_Subject(
                     CS_ID INTEGER PRIMARY KEY AUTOINCREMENT,
                     Subject_ID INTEGER NOT NULL,
                     Course_ID INTEGER NOT NULL,
+                    Course_Name TEXT NOT NULL UNIQUE,
+                    Subject_Name TEXT NOT NULL
                     FOREIGN KEY (Subject_ID) REFERENCES Subject(Subject_ID),
                     FOREIGN KEY (Course_ID) REFERENCES Course(Course_ID)
                 );
@@ -74,7 +75,8 @@ namespace UnicomTIC_Management_System.Data.Migration
                 CREATE TABLE IF NOT EXISTS Batch(
                     Batch_ID INTEGER PRIMARY KEY AUTOINCREMENT,
                     Batch_Name TEXT NOT NULL UNIQUE,
-                    Year INTEGER NOT NULL
+                    Year INTEGER NOT NULL,
+                    Batch_Status TEXT NOT NULL
                 );
 
                 CREATE TABLE IF NOT EXISTS Student(
