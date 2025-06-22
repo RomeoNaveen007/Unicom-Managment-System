@@ -40,17 +40,18 @@ namespace UnicomTIC_Management_System.Data.Migration
 
                 CREATE TABLE IF NOT EXISTS Subject(
                     Subject_ID INTEGER PRIMARY KEY AUTOINCREMENT,
+                    Subject_Name TEXT NOT NULL UNIQUE
                 );
 
-                CREATE TABLE IF NOT EXISTS Course_Subject(
+                CREATE TABLE IF NOT EXISTS Course_Subject (
                     CS_ID INTEGER PRIMARY KEY AUTOINCREMENT,
                     Subject_ID INTEGER NOT NULL,
                     Course_ID INTEGER NOT NULL,
-                    Course_Name TEXT NOT NULL UNIQUE,
-                    Subject_Name TEXT NOT NULL
                     FOREIGN KEY (Subject_ID) REFERENCES Subject(Subject_ID),
-                    FOREIGN KEY (Course_ID) REFERENCES Course(Course_ID)
+                    FOREIGN KEY (Course_ID) REFERENCES Course(Course_ID),
+                    UNIQUE (Subject_ID, Course_ID)
                 );
+                
 
                 CREATE TABLE IF NOT EXISTS Exam(
                     Exam_ID INTEGER PRIMARY KEY AUTOINCREMENT,

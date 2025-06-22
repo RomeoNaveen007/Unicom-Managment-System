@@ -168,3 +168,4 @@ Z:\C#\New project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\
 Z:\C#\New project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.exe
 Z:\C#\New project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.pdb
 Z:\C#\New project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Forms.CS_Form.resources
+C:\Naveen\C # Project\Unicom-Managment-System\UnicomTIC_Management_System\obj\Debug\UnicomTIC_Management_System.Forms.CS_Form.resources

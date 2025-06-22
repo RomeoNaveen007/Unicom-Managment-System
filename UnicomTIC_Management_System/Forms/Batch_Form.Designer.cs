@@ -83,6 +83,7 @@
             this.button1.TabIndex = 6;
             this.button1.Text = "Search";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -103,11 +104,11 @@
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(334, 57);
+            this.label3.Location = new System.Drawing.Point(332, 61);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(99, 36);
+            this.label3.Size = new System.Drawing.Size(106, 29);
             this.label3.TabIndex = 9;
-            this.label3.Text = "Enter year to search";
+            this.label3.Text = "Enter Batch Name";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 

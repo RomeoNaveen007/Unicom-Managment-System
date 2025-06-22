@@ -110,7 +110,7 @@ namespace UnicomTIC_Management_System.Forms
             if (comboBox2.Text == "Add")
             {
                 Batch batch = new Batch();
-                batch.Batch_Name = textBox2.Text.Trim();
+                batch.Batch_Name =CapitalizeFirstLetter ( textBox2.Text.Trim());
                 batch.Batch_Status = "Active";
 
                 // Get the year from DateTimePicker
@@ -220,6 +220,51 @@ namespace UnicomTIC_Management_System.Forms
                 {
                     MessageBox.Show("Invalid Batch ID.");
                 }
+            }
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string search_name = textBox1.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(search_name))
+            {
+                MessageBox.Show("Please enter a batch name to search.");
+                return;
+            }
+
+            // Get matching batches from DB
+            Batch_Service batchService = new Batch_Service();
+            List<Batch> allMatched = batchService.Get_Searched_Batch_Name(search_name);
+
+            // Filter for only active batches
+            List<Batch> activeMatched = allMatched
+                .Where(batch => batch.Batch_Status == "Active")
+                .Select(batch => new Batch
+                {
+                    Batch_ID = batch.Batch_ID,
+                    Batch_Name = batch.Batch_Name,
+                    Year = batch.Year,
+                    Batch_Status = batch.Batch_Status
+                })
+                .ToList();
+
+            // Update the DataGridView
+            dataGridView1.ReadOnly = true;
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = activeMatched;
+
+            // Hide unwanted columns if they exist
+            if (dataGridView1.Columns.Contains("Batch_Status")) dataGridView1.Columns["Batch_Status"].Visible = false;
+            if (dataGridView1.Columns.Contains("Batch_ID")) dataGridView1.Columns["Batch_ID"].Visible = false;
+
+            dataGridView1.ClearSelection();
+            ClearInputs();
+
+            if (activeMatched.Count == 0)
+            {
+                MessageBox.Show("No active batches found with that name.");
             }
 
         }

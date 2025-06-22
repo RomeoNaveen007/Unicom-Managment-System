@@ -108,5 +108,11 @@ namespace UnicomTIC_Management_System
         {
 
         }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            OpenFormInPanel(new CS_Form());
+
+        }
     }
 }

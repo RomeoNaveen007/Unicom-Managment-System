@@ -197,6 +197,57 @@ namespace UnicomTIC_Management_System.Service
             }
         }
 
+        public List<Batch> Get_Searched_Batch_Name(string batchName)
+        {
+            List<Batch> searchedBatches = new List<Batch>();
+
+            try
+            {
+                using (var conn = DB_Config.getConnection())
+                {
+                    string query = @"
+            SELECT 
+                Batch_ID, 
+                Batch_Name, 
+                Year, 
+                Batch_Status
+            FROM Batch
+            WHERE LOWER(Batch_Name) LIKE '%' || LOWER(@Batch_Name) || '%';";
+
+                    using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@Batch_Name", batchName);
+
+                        using (SQLiteDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                searchedBatches.Add(new Batch
+                                {
+                                    Batch_ID = reader.GetInt32(0),
+                                    Batch_Name = reader.GetString(1),
+                                    Year = reader.GetInt32(2),
+                                    Batch_Status = reader.GetString(3)
+                                });
+                            }
+                        }
+                    }
+                }
+            }
+            catch (SQLiteException ex)
+            {
+                // Log error or show user-friendly message
+                MessageBox.Show("Database error occurred: " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                // Catch other unexpected exceptions
+                MessageBox.Show("Unexpected error: " + ex.Message);
+            }
+
+            return searchedBatches;
+        }
+
 
     }
 }
