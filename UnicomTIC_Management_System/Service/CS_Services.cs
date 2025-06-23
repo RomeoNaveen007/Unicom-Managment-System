@@ -105,9 +105,9 @@ namespace UnicomTIC_Management_System.Service
                             courseSubjects.Add(new Course_Subject
                             {
                                 CS_ID = reader.GetInt32(0),
-                                Cousre_ID = reader.GetInt32(1),
-                                Course_Name = reader.IsDBNull(2) ? null : reader.GetString(3),
-                                Subject_ID = reader.GetInt32(3).ToString(),
+                                Course_ID = reader.GetInt32(1),
+                                Subject_ID = reader.GetInt32(2).ToString(),
+                                Course_Name = reader.IsDBNull(3) ? null : reader.GetString(3),
                                 Subject_Name = reader.IsDBNull(4) ? null : reader.GetString(4)
                             });
                         }
@@ -158,7 +158,7 @@ namespace UnicomTIC_Management_System.Service
                                 courseSubject = new Course_Subject
                                 {
                                     CS_ID = reader.GetInt32(0),
-                                    Cousre_ID = reader.GetInt32(1),
+                                    Course_ID = reader.GetInt32(1),
                                     Subject_ID = reader.GetInt32(2).ToString(),
                                     Course_Name = reader.IsDBNull(3) ? null : reader.GetString(3),
                                     Subject_Name = reader.IsDBNull(4) ? null : reader.GetString(4)
@@ -191,7 +191,7 @@ namespace UnicomTIC_Management_System.Service
 
                     using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
                     {
-                        cmd.Parameters.AddWithValue("@Course_ID", updatedCS.Cousre_ID);
+                        cmd.Parameters.AddWithValue("@Course_ID", updatedCS.Course_ID);
                         cmd.Parameters.AddWithValue("@Subject_ID", updatedCS.Subject_ID);
                         cmd.Parameters.AddWithValue("@CS_ID", updatedCS.CS_ID);
                         int result = cmd.ExecuteNonQuery();

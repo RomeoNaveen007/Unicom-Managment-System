@@ -22,11 +22,16 @@ namespace UnicomTIC_Management_System.Forms
         public CS_Form()
         {
             InitializeComponent();
+            LoadCourseSubjectData();
             PopulateCourseComboBox();
             PopulateSubjectComboBox();
-            LoadCourseSubjectData();
-
         }
+
+        private void CS_Form_Load(object sender, EventArgs e)
+        {
+            
+        }
+
 
         private void PopulateCourseComboBox()
         {
@@ -73,15 +78,25 @@ namespace UnicomTIC_Management_System.Forms
         private void LoadCourseSubjectData()
         {
             cs_services = new CS_Services();
-            var data = cs_services.GetAllCourseSubjects(); 
+            var data = cs_services.GetAllCourseSubjects();
+
+            if (data == null || data.Count == 0)
+            {
+                dataGridView1.DataSource = null;
+                MessageBox.Show("No course-subject entries found.");
+                return;
+            }
+
             dataGridView1.DataSource = data;
             dataGridView1.ReadOnly = true;
             dataGridView1.Columns["CS_ID"].Visible = false;
-            dataGridView1.Columns["Cousre_ID"].Visible = false;
+            dataGridView1.Columns["Course_ID"].Visible = false;
             dataGridView1.Columns["Subject_ID"].Visible = false;
             dataGridView1.ClearSelection();
             ClearInputs();
         }
+
+
 
 
         private void button1_Click(object sender, EventArgs e)
@@ -164,7 +179,7 @@ namespace UnicomTIC_Management_System.Forms
             var updatedCS = new Course_Subject
             {
                 CS_ID = Clicked_CS_ID,
-                Cousre_ID = Convert.ToInt32(comboBox1.SelectedValue),
+                Course_ID = Convert.ToInt32(comboBox1.SelectedValue),
                 Subject_ID = comboBox2.SelectedValue.ToString(),
                 Course_Name = comboBox1.Text,
                 Subject_Name = comboBox2.Text
@@ -204,7 +219,8 @@ namespace UnicomTIC_Management_System.Forms
             }
         }
 
-        private void CS_Form_Load(object sender, EventArgs e)
+       
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

@@ -110,6 +110,7 @@
             this.button12.TabIndex = 30;
             this.button12.Text = "Admin";
             this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click_1);
             // 
             // button11
             // 
@@ -119,6 +120,7 @@
             this.button11.TabIndex = 29;
             this.button11.Text = "Batch";
             this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click_1);
             // 
             // button10
             // 
@@ -128,6 +130,7 @@
             this.button10.TabIndex = 28;
             this.button10.Text = "Room";
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click_1);
             // 
             // button9
             // 
@@ -137,6 +140,7 @@
             this.button9.TabIndex = 27;
             this.button9.Text = "Staff";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click_1);
             // 
             // button16
             // 
@@ -146,6 +150,7 @@
             this.button16.TabIndex = 0;
             this.button16.Text = "Lecturer Batch";
             this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.button16_Click);
             // 
             // button14
             // 

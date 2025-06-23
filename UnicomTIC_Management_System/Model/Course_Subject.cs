@@ -9,7 +9,7 @@ namespace UnicomTIC_Management_System.Model
     internal class Course_Subject
     {
         public int CS_ID { get; set; }
-        public int Cousre_ID { get; set; }
+        public int Course_ID { get; set; }
         public string Subject_ID { get; set; }
 
         public string Subject_Name { get; set; }

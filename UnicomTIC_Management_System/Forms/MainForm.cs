@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UnicomTIC_Management_System.Forms;
+using UnicomTIC_Management_System.Model;
 
 namespace UnicomTIC_Management_System
 {
@@ -123,6 +124,31 @@ namespace UnicomTIC_Management_System
         private void button14_Click(object sender, EventArgs e)
         {
             OpenFormInPanel(new Lecturer_CS_Form());
+        }
+
+        private void button11_Click_1(object sender, EventArgs e)
+        {
+            OpenFormInPanel(new Batch_Form());
+        }
+
+        private void button12_Click_1(object sender, EventArgs e)
+        {
+            OpenFormInPanel(new Admin_Form());
+        }
+
+        private void button10_Click_1(object sender, EventArgs e)
+        {
+            OpenFormInPanel(new Room_Form());
+        }
+
+        private void button9_Click_1(object sender, EventArgs e)
+        {
+            OpenFormInPanel(new Staff_Form());
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+          //  OpenFormInPanel(ne());
         }
     }
 }
