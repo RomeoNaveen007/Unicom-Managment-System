@@ -240,7 +240,7 @@ namespace UnicomTIC_Management_System.Forms
                 lecturer.Lecturer_Address = CapitalizeFirstLetter(textBox2.Text.Trim());
                 lecturer.Lecturer_NIC = CapitalizeFirstLetter(textBox3.Text.Trim());
                 lecturer.Special_In = CapitalizeFirstLetter(textBox4.Text.Trim());
-
+                lecturer.Lecturer_Status = "Active";
                 lecturerService = new Lecturer_Service();
                 lecturerService.Update_Lecturer(lecturer); // Use an appropriate method name
 

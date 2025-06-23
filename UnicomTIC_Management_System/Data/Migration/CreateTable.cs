@@ -51,16 +51,7 @@ namespace UnicomTIC_Management_System.Data.Migration
                     FOREIGN KEY (Course_ID) REFERENCES Course(Course_ID),
                     UNIQUE (Subject_ID, Course_ID)
                 );
-                
-
-                CREATE TABLE IF NOT EXISTS Exam(
-                    Exam_ID INTEGER PRIMARY KEY AUTOINCREMENT,
-                    Exam_type TEXT NOT NULL,
-                    Exam_Date DATE NOT NULL,
-                    Exam_Duration TEXT NOT NULL,
-                    CS_ID INTEGER NOT NULL,
-                    FOREIGN KEY (CS_ID) REFERENCES Course_Subject(CS_ID)
-                );
+               
 
                 CREATE TABLE IF NOT EXISTS Timetable(
                     Timetable_ID INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -80,6 +71,20 @@ namespace UnicomTIC_Management_System.Data.Migration
                     Batch_Status TEXT NOT NULL
                 );
 
+
+                CREATE TABLE IF NOT EXISTS Exam(
+                    Exam_ID INTEGER PRIMARY KEY AUTOINCREMENT,
+                    Exam_type TEXT NOT NULL,
+                    Exam_Date DATE NOT NULL,
+                    Exam_Duration TEXT NOT NULL,
+                    Exam_Status TEXT NOT NULL,
+                    Batch_ID INTEGER NOT NULL,
+                    CS_ID INTEGER NOT NULL,
+                    FOREIGN KEY (Batch_ID) REFERENCES Batch(Batch_ID),
+                    FOREIGN KEY (CS_ID) REFERENCES Course_Subject(CS_ID)
+                );
+
+
                 CREATE TABLE IF NOT EXISTS Student(
                     Student_ID INTEGER PRIMARY KEY AUTOINCREMENT,
                     Student_Name TEXT NOT NULL,
@@ -89,7 +94,6 @@ namespace UnicomTIC_Management_System.Data.Migration
                     CS_ID INTEGER,
                     Batch_ID INTEGER,
                     User_ID INTEGER NOT NULL,
-                    User_Name TEXT  NOT NULL,
                     FOREIGN KEY (User_ID) REFERENCES User(User_ID),
                     FOREIGN KEY(CS_ID) REFERENCES Course_Subject(CS_ID),
                     FOREIGN KEY(Batch_ID) REFERENCES Batch(Batch_ID)

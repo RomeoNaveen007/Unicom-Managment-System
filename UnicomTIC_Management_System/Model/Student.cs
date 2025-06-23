@@ -15,6 +15,11 @@ namespace UnicomTIC_Management_System.Model
         public string Student_Status { get; set; }
         public int CS_ID { get; set; }
         public string Batch_ID { get; set; }
+        public int User_ID { get; set; }
+        public string User_Name { get; set; }
+        public string Course_Name { get; set; }
+        public string Batch_Name { get; set; }
+
 
     }
 }

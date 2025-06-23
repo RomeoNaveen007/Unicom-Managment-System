@@ -184,7 +184,8 @@ namespace UnicomTIC_Management_System.Service
                 Lecturer_Address = @Lecturer_Address,
                 Lecturer_NIC = @Lecturer_NIC,
                 Lecturer_Status = @Lecturer_Status,
-                Special_In = @Special_In
+                Special_In = @Special_In,
+                Lecturer_Status = @Status
             WHERE Lecturer_ID = @Lecturer_ID;";
 
                 using (var cmd = new SQLiteCommand(query, conn))
@@ -194,8 +195,8 @@ namespace UnicomTIC_Management_System.Service
                     cmd.Parameters.AddWithValue("@Lecturer_NIC", up_lecturer.Lecturer_NIC);
                     cmd.Parameters.AddWithValue("@Lecturer_Status", up_lecturer.Lecturer_Status);
                     cmd.Parameters.AddWithValue("@Special_In", up_lecturer.Special_In);
+                    cmd.Parameters.AddWithValue("@Status", up_lecturer.Lecturer_Status);
                     cmd.Parameters.AddWithValue("@Lecturer_ID", up_lecturer.Lecturer_ID);
-
                     cmd.ExecuteNonQuery();
 
                     MessageBox.Show($"{up_lecturer.Lecturer_Name}'s record updated successfully.");

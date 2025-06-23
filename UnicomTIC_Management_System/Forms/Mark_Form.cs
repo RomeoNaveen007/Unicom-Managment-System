@@ -21,5 +21,10 @@ namespace UnicomTIC_Management_System.Forms
         {
 
         }
+
+        private void Mark_Form_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

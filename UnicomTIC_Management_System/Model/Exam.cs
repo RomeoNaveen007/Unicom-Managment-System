@@ -13,6 +13,13 @@ namespace UnicomTIC_Management_System.Model
         public string Exam_Date { get; set; }
         public string Exam_Duration { get; set; }
         public int CS_ID { get; set; }
+        public int Batch_ID { get; set; }
+        public string Exam_Status { get; set; }
+
+
+        public string Course_Name { get; set; }
+        public string Subject_Name { get; set; }
+        public string Batch_Name { get; set; }
 
     }
 }
