@@ -21,59 +21,69 @@ namespace UnicomTIC_Management_System.Service
         public void AddLecturer(Lecturer lecturer)
         {
             using (var conn = DB_Config.getConnection())
+            using (var transaction = conn.BeginTransaction())
             {
-
-                using (var transaction = conn.BeginTransaction())
+                try
                 {
-                    try
+                    string checkUserQuery = "SELECT COUNT(*) FROM [User] WHERE User_Name = @User_Name;";
+                    using (var checkCmd = new SQLiteCommand(checkUserQuery, conn, transaction))
                     {
-                        // Insert User record first and get the new User_ID
-                        string userQuery = @"
-                    INSERT INTO [User] (User_Name, Password, Role) 
-                    VALUES (@User_Name, @Password, @Role); 
-                    SELECT last_insert_rowid();";
+                        checkCmd.Parameters.AddWithValue("@User_Name", lecturer.User_Name);
+                        int userExists = Convert.ToInt32(checkCmd.ExecuteScalar());
 
-                        long userId;
-                        using (var userCmd = new SQLiteCommand(userQuery, conn, transaction))
+                        if (userExists > 0)
                         {
-                            userCmd.Parameters.AddWithValue("@User_Name", lecturer.User_Name);
-                            userCmd.Parameters.AddWithValue("@Password", lecturer.Password);
-                            userCmd.Parameters.AddWithValue("@Role", lecturer.Role);
-
-                            userId = (long)userCmd.ExecuteScalar();
+                            MessageBox.Show($"Username '{lecturer.User_Name}' already exists.");
+                            transaction.Rollback();
+                            return;
                         }
-
-                        // Insert Lecturer record using the User_ID as foreign key
-                        string lecturerQuery = @"
-                    INSERT INTO Lecturer 
-                    (Lecturer_Name, Lecturer_Address, Lecturer_NIC, Lecturer_Status, Special_In, User_ID,User_Name) 
-                    VALUES 
-                    (@Lecturer_Name, @Lecturer_Address, @Lecturer_NIC, @Lecturer_Status, @Special_In, @User_ID,@User_Name);";
-
-                        using (var lecturerCmd = new SQLiteCommand(lecturerQuery, conn, transaction))
-                        {
-                            lecturerCmd.Parameters.AddWithValue("@Lecturer_Name", lecturer.Lecturer_Name);
-                            lecturerCmd.Parameters.AddWithValue("@Lecturer_Address", lecturer.Lecturer_Address);
-                            lecturerCmd.Parameters.AddWithValue("@Lecturer_NIC", lecturer.Lecturer_NIC);
-                            lecturerCmd.Parameters.AddWithValue("@Lecturer_Status", lecturer.Lecturer_Status);
-                            lecturerCmd.Parameters.AddWithValue("@Special_In", lecturer.Special_In);
-                            lecturerCmd.Parameters.AddWithValue("@User_Name", lecturer.User_Name);
-                            lecturerCmd.Parameters.AddWithValue("@User_ID", userId);
-
-                            lecturerCmd.ExecuteNonQuery();
-                        }
-
-                        transaction.Commit();
-                        MessageBox.Show($"{lecturer.Lecturer_Name} added successfully.");
                     }
-                    catch (Exception ex)
+
+                    string userQuery = @"
+                INSERT INTO [User] (User_Name, Password, Role) 
+                VALUES (@User_Name, @Password, @Role); 
+                SELECT last_insert_rowid();";
+
+                    long userId;
+                    using (var userCmd = new SQLiteCommand(userQuery, conn, transaction))
                     {
-                        transaction.Rollback();
-                        MessageBox.Show("Error adding lecturer: " + ex.Message);
+                        userCmd.Parameters.AddWithValue("@User_Name", lecturer.User_Name);
+                        userCmd.Parameters.AddWithValue("@Password", lecturer.Password);
+                        userCmd.Parameters.AddWithValue("@Role", lecturer.Role);
+
+                        userId = (long)userCmd.ExecuteScalar();
                     }
+
+                    string lecturerQuery = @"
+                INSERT INTO Lecturer 
+                (Lecturer_Name, Lecturer_Address, Lecturer_NIC, Lecturer_Status, Special_In, User_ID, User_Name) 
+                VALUES 
+                (@Lecturer_Name, @Lecturer_Address, @Lecturer_NIC, @Lecturer_Status, @Special_In, @User_ID, @User_Name);";
+
+                    using (var lecturerCmd = new SQLiteCommand(lecturerQuery, conn, transaction))
+                    {
+                        lecturerCmd.Parameters.AddWithValue("@Lecturer_Name", lecturer.Lecturer_Name);
+                        lecturerCmd.Parameters.AddWithValue("@Lecturer_Address", lecturer.Lecturer_Address);
+                        lecturerCmd.Parameters.AddWithValue("@Lecturer_NIC", lecturer.Lecturer_NIC);
+                        lecturerCmd.Parameters.AddWithValue("@Lecturer_Status", lecturer.Lecturer_Status);
+                        lecturerCmd.Parameters.AddWithValue("@Special_In", lecturer.Special_In);
+                        lecturerCmd.Parameters.AddWithValue("@User_Name", lecturer.User_Name);
+                        lecturerCmd.Parameters.AddWithValue("@User_ID", userId);
+
+                        lecturerCmd.ExecuteNonQuery();
+                    }
+
+                    transaction.Commit();
+                    MessageBox.Show($"Lecturer '{lecturer.Lecturer_Name}' added successfully.");
+                }
+                catch (Exception ex)
+                {
+                    transaction.Rollback();
+                    MessageBox.Show("Error adding lecturer: " + ex.Message);
                 }
             }
         }
+
 
         public List<Lecturer> Get_All_Lecturers()
         {
@@ -259,6 +269,8 @@ namespace UnicomTIC_Management_System.Service
 
             return searchedLecturers;
         }
+
+      
 
     }
 }

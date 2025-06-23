@@ -190,23 +190,41 @@ namespace UnicomTIC_Management_System.Forms
 
             if (comboBox2.Text == "Add")
             {
-                
+                if (string.IsNullOrWhiteSpace(textBox1.Text) ||
+                    string.IsNullOrWhiteSpace(textBox2.Text) ||
+                    string.IsNullOrWhiteSpace(textBox3.Text) ||
+                    string.IsNullOrWhiteSpace(textBox4.Text) ||
+                    string.IsNullOrWhiteSpace(textBox5.Text))
+                {
+                    MessageBox.Show("Please fill in all lecturer details.");
+                    return;
+                }
 
-                Lecturer lecturer = new Lecturer();
-                lecturer.Lecturer_Name = CapitalizeFirstLetter(textBox1.Text.Trim());
-                lecturer.Lecturer_Address = CapitalizeFirstLetter(textBox2.Text.Trim());
-                lecturer.Lecturer_NIC = CapitalizeFirstLetter(textBox3.Text.Trim());
-                lecturer.Special_In = CapitalizeFirstLetter(textBox4.Text.Trim());
-                lecturer.User_Name = CapitalizeFirstLetter(textBox5.Text.Trim());
-                lecturer.Password = "Lecturer123@";
-                lecturer.Role = "Lecturer";
-                lecturer.Lecturer_Status = "Active";
+                try
+                {
+                    Lecturer lecturer = new Lecturer
+                    {
+                        Lecturer_Name = CapitalizeFirstLetter(textBox1.Text.Trim()),
+                        Lecturer_Address = CapitalizeFirstLetter(textBox2.Text.Trim()),
+                        Lecturer_NIC = CapitalizeFirstLetter(textBox3.Text.Trim()),
+                        Special_In = CapitalizeFirstLetter(textBox4.Text.Trim()),
+                        User_Name = CapitalizeFirstLetter(textBox5.Text.Trim()),
+                        Password = "Lecturer123@",
+                        Role = "Lecturer",
+                        Lecturer_Status = "Active"
+                    };
 
-                lecturerService = new Lecturer_Service();
-                lecturerService.AddLecturer(lecturer); // Use an appropriate method name
-
-                Get_Lecturer_Info(); // Refresh or load updated lecturer data
+                    new Lecturer_Service().AddLecturer(lecturer);
+                    MessageBox.Show($"User Password is {lecturer.Password}");
+                    Get_Lecturer_Info(); 
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Unexpected error while adding lecturer:\n" + ex.Message);
+                }
             }
+
+
 
             if (comboBox2.Text == "Update")
             {

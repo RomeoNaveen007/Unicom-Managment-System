@@ -204,6 +204,10 @@ namespace UnicomTIC_Management_System.Forms
             }
         }
 
+        private void CS_Form_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

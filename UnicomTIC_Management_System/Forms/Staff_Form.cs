@@ -116,7 +116,7 @@ namespace UnicomTIC_Management_System.Forms
 
                 Staff_Service staff_Service = new Staff_Service();
                 staff_Service.GetAll_staff(staff);
-
+                MessageBox.Show($"User Password {staff.Password}");
                 get_STaff_info();
 
             }

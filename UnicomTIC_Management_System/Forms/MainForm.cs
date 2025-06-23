@@ -114,5 +114,15 @@ namespace UnicomTIC_Management_System
             OpenFormInPanel(new CS_Form());
 
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            OpenFormInPanel(new Lecturer_CS_Form());
+        }
     }
 }

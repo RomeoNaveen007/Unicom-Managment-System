@@ -106,8 +106,8 @@ namespace UnicomTIC_Management_System.Service
                             {
                                 CS_ID = reader.GetInt32(0),
                                 Cousre_ID = reader.GetInt32(1),
-                                Subject_ID = reader.GetInt32(2).ToString(),
-                                Course_Name = reader.IsDBNull(3) ? null : reader.GetString(3),
+                                Course_Name = reader.IsDBNull(2) ? null : reader.GetString(3),
+                                Subject_ID = reader.GetInt32(3).ToString(),
                                 Subject_Name = reader.IsDBNull(4) ? null : reader.GetString(4)
                             });
                         }
