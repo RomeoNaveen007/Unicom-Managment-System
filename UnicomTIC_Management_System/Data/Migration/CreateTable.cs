@@ -77,7 +77,6 @@ namespace UnicomTIC_Management_System.Data.Migration
                     Exam_type TEXT NOT NULL,
                     Exam_Date DATE NOT NULL,
                     Exam_Duration TEXT NOT NULL,
-                    Exam_Status TEXT NOT NULL,
                     Batch_ID INTEGER NOT NULL,
                     CS_ID INTEGER NOT NULL,
                     FOREIGN KEY (Batch_ID) REFERENCES Batch(Batch_ID),
