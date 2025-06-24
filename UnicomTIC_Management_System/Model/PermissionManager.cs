@@ -1,30 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using UnicomTIC_Management_System.Data.log_session;
 
-namespace UnicomTIC_Management_System.Forms
+namespace UnicomTIC_Management_System.Model
 {
-    public partial class Timetable_Form : Form
+    public static class PermissionManager
     {
-        public Timetable_Form()
-        {
-            InitializeComponent();
-        }
-/*
-        private bool HasPermission(string action, string table)
+        public static bool HasPermission(string role, string action, string table)
         {
             try
             {
-                Login_info loggedUser = new Login_info();
-                
-                switch (loggedUser.login_role)
+                switch (role)
                 {
                     case "Admin":
                         return true;
@@ -45,23 +34,13 @@ namespace UnicomTIC_Management_System.Forms
                     default:
                         return false;
                 }
-            
             }
             catch
             {
                 MessageBox.Show("Access control failure.");
                 return false;
             }
-        }*/
-
-        /* if (!HasPermission("Delete", "Staff"))   ..................used in delete function ............................
-         {
-             MessageBox.Show("You do not have permission to delete from Staff.");
-             return;
-         }*/
-
+        }
     }
+
 }
-
-
-

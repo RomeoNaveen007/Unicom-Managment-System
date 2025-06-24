@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UnicomTIC_Management_System.Data.Migration;
+using UnicomTIC_Management_System.Forms;
 
 namespace UnicomTIC_Management_System
 {
@@ -16,11 +17,12 @@ namespace UnicomTIC_Management_System
         static void Main()
         {
             CreateTable createtable = new CreateTable();
-            createtable.table_Creation(); // Ensure the database tables are created before running the application
+            createtable.table_Creation();
+
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            Application.Run(new Login_Form());
         }
     }
 }

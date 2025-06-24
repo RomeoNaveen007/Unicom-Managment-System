@@ -4,12 +4,13 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using UnicomTIC_Management_System.Service;
+using UnicomTIC_Management_System.Data.log_session;
 using UnicomTIC_Management_System.Model;
-using System.Reflection.Emit;
+using UnicomTIC_Management_System.Service;
 
 namespace UnicomTIC_Management_System.Forms
 {
@@ -22,8 +23,9 @@ namespace UnicomTIC_Management_System.Forms
         {
             InitializeComponent();
             Get_Subject_Info();
+            Role_access();
         }
-
+       
         private string CapitalizeFirstLetter(string input)
         {
             if (string.IsNullOrWhiteSpace(input))
@@ -31,7 +33,25 @@ namespace UnicomTIC_Management_System.Forms
 
             return char.ToUpper(input[0]) + input.Substring(1).ToLower();
         }
+        private void Role_access()
+        {
+            Login login = new Login();
+            if (login.login_role == "Student")
+            {
+                comboBox1.Visible = false;
 
+
+            }
+            else if (login.login_role == "Lecturer")
+            {
+                comboBox1.Visible = false;
+            }
+            else if (login.login_role == "staff" || login.login_role == "Admin")
+            {
+                comboBox1.Visible = true;
+
+            }
+        }
         private void ClearInputs() 
         {
             comboBox1.Text = string.Empty;
@@ -143,6 +163,7 @@ namespace UnicomTIC_Management_System.Forms
             }
             else if (comboBox1.Text == "Delete")
             {
+
                 if (Clicked_Subject_ID == -1)
                 {
                     MessageBox.Show("Please select a subject from the list before deleting.");

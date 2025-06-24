@@ -8,6 +8,7 @@ using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UnicomTIC_Management_System.Data.log_session;
 using UnicomTIC_Management_System.Model;
 using UnicomTIC_Management_System.Service;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -25,6 +26,27 @@ namespace UnicomTIC_Management_System.Forms
         {
             InitializeComponent();
             Get_Course_Info();
+            Role_access();
+        }
+
+        private void Role_access()
+        {
+            Login login = new Login();
+            if (login.login_role == "Student")
+            {
+                comboBox1.Visible = false;
+
+
+            }
+            else if (login.login_role == "Lecturer")
+            {
+                comboBox1.Visible = false;
+            }
+            else if (login.login_role == "staff" || login.login_role == "Admin")
+            {
+                comboBox1.Visible = true;
+
+            }
         }
 
         private string CapitalizeFirstLetter(string input)
@@ -131,7 +153,7 @@ namespace UnicomTIC_Management_System.Forms
 
             if (comboBox1.Text == "Delete")
             {
-
+               
                 if (Clicked_Course_ID == -1)
                 {
                     MessageBox.Show("Please select a course from the list first.");

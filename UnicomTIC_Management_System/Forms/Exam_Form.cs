@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UnicomTIC_Management_System.Data.log_session;
 using UnicomTIC_Management_System.Model;
 using UnicomTIC_Management_System.Service;
 
@@ -21,13 +22,40 @@ namespace UnicomTIC_Management_System.Forms
         public Exam_Form()
         {
             InitializeComponent();
+            Role_access();
+            LoadExams();
         }
         private void Exam_Form_Load(object sender, EventArgs e)
         {
+            Role_access();
             LoadCourses();
             LoadDurations();
             LoadBatchNames();
-            LoadExams();
+           
+        }
+
+        private void Role_access() 
+        {
+            Login login = new Login();
+            if (login.login_role=="Student")
+            {
+                button1.Visible = false;
+                button2.Visible = false;
+                button3.Visible = false;
+
+            }
+            else if (login.login_role == "Lecturer")
+            {
+                button1.Visible = true;
+                button2.Visible = true;
+                button3.Visible = false;
+            }
+            else if (login.login_role == "staff"|| login.login_role == "Admin")
+            {
+                button1.Visible = true;
+                button2.Visible = true;
+                button3.Visible = true;
+            }
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
@@ -153,7 +181,9 @@ namespace UnicomTIC_Management_System.Forms
                     Exam_Date = dateTimePicker1.Value.ToString("yyyy-MM-dd"),
                     Exam_Duration = comboBox4.Text.Trim(),
                     CS_ID = cs_id,
-                    Batch_ID = batch_id
+                    Batch_ID = batch_id,
+                    Exam_Status = "Active"
+
                 };
                 if (exam_services.IsDuplicateExam(exam))
                 {
@@ -181,33 +211,46 @@ namespace UnicomTIC_Management_System.Forms
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
+            try
             {
-                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-
-                if (row.Cells["Exam_ID"].Value != null &&
-                    int.TryParse(row.Cells["Exam_ID"].Value.ToString(), out int examId))
+                if (e.RowIndex >= 0)
                 {
-                    selectedExamID = examId;
-
-                    exam_services= new Exam_Services();
-                    var exam = exam_services.GetExamById(examId);
-
-                    if (exam != null)
+                    DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+                   
+                    if (!dataGridView1.Columns.Contains("Exam_ID"))
                     {
-                        comboBox1.Text = exam.Exam_type;
-                        dateTimePicker1.Value = DateTime.TryParse(exam.Exam_Date, out var date)
-                            ? date : DateTime.Today;
-                        comboBox2.Text = exam.Course_Name;
-                        comboBox3.Text = exam.Subject_Name;
-                        comboBox4.Text = exam.Exam_Duration;
-                        comboBox5.Text = exam.Batch_Name;
+                        MessageBox.Show("Exam_ID column not found.");
+                        return;
                     }
-                    else
+
+                    if (row.Cells["Exam_ID"].Value != null &&
+                        int.TryParse(row.Cells["Exam_ID"].Value.ToString(), out int examId))
                     {
-                        MessageBox.Show("Exam record not found.");
+                        selectedExamID = examId;
+
+                        exam_services = new Exam_Services();
+                        var exam = exam_services.GetExamById(examId);
+
+                        if (exam != null)
+                        {
+                            comboBox1.Text = exam.Exam_type;
+                            dateTimePicker1.Value = DateTime.TryParse(exam.Exam_Date, out var date)
+                                ? date : DateTime.Today;
+                            comboBox2.Text = exam.Course_Name ?? "";
+                            comboBox3.Text = exam.Subject_Name ?? "";
+                            comboBox4.Text = exam.Exam_Duration ?? "";
+                            comboBox5.Text = exam.Batch_Name ?? "";
+                        }
+                        else
+                        {
+                            MessageBox.Show("Exam record not found.");
+                        }
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading exam:\n" + ex.Message);
             }
         }
 
@@ -215,14 +258,17 @@ namespace UnicomTIC_Management_System.Forms
         {
             if (selectedExamID <= 0)
             {
-                MessageBox.Show("Select an exam record to update.");
+                MessageBox.Show("Please select an exam to update.");
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(comboBox1.Text) || comboBox2.SelectedIndex == -1 ||
-                comboBox3.SelectedIndex == -1 || comboBox4.SelectedIndex == -1 || comboBox5.SelectedIndex == -1)
+            if (comboBox1.SelectedIndex == -1 ||
+                comboBox2.SelectedIndex == -1 ||
+                comboBox3.SelectedIndex == -1 ||
+                comboBox4.SelectedIndex == -1 ||
+                comboBox5.SelectedIndex == -1)
             {
-                MessageBox.Show("Please fill in all required fields.");
+                MessageBox.Show("Please complete all fields before updating.");
                 return;
             }
 
@@ -235,7 +281,7 @@ namespace UnicomTIC_Management_System.Forms
 
                 if (cs_id <= 0 || batch_id <= 0)
                 {
-                    MessageBox.Show("Invalid course-subject or batch selection.");
+                    MessageBox.Show("Invalid course-subject or batch.");
                     return;
                 }
 
@@ -254,18 +300,17 @@ namespace UnicomTIC_Management_System.Forms
                 if (success)
                 {
                     MessageBox.Show("Exam updated successfully.");
-                    LoadExams(); 
+                    LoadExams();
                     ClearExamFields();
-                    selectedExamID = -1;
                 }
                 else
                 {
-                    MessageBox.Show("Failed to update exam.");
+                    MessageBox.Show("Update failed. Please try again.");
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error during exam update:\n" + ex.Message);
+                MessageBox.Show("Error during update:\n" + ex.Message);
             }
         }
 
@@ -277,7 +322,7 @@ namespace UnicomTIC_Management_System.Forms
                 return;
             }
 
-            DialogResult confirm = MessageBox.Show("Are you sure you want to delete this exam?", "Confirm", MessageBoxButtons.YesNo);
+            var confirm = MessageBox.Show("Are you sure you want to mark this exam as inactive?", "Confirm", MessageBoxButtons.YesNo);
             if (confirm != DialogResult.Yes) return;
 
             try
@@ -287,14 +332,13 @@ namespace UnicomTIC_Management_System.Forms
 
                 if (deleted)
                 {
-                    MessageBox.Show("Exam deleted successfully.");
+                    MessageBox.Show("Exam marked as inactive.");
                     LoadExams();
                     ClearExamFields();
-                    selectedExamID = -1;
                 }
                 else
                 {
-                    MessageBox.Show("Unable to delete exam.");
+                    MessageBox.Show("Could not delete exam.");
                 }
             }
             catch (Exception ex)
@@ -302,6 +346,7 @@ namespace UnicomTIC_Management_System.Forms
                 MessageBox.Show("Error deleting exam:\n" + ex.Message);
             }
         }
+
     }
 }
 

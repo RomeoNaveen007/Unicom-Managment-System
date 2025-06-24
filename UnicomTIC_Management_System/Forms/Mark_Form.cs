@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UnicomTIC_Management_System.Data.DB_Connection;
+using UnicomTIC_Management_System.Data.log_session;
 using UnicomTIC_Management_System.Model;
 using UnicomTIC_Management_System.Service;
 
@@ -19,7 +20,34 @@ namespace UnicomTIC_Management_System.Forms
         public Mark_Form()
         {
             InitializeComponent();
+            Role_access();
+
         }
+
+        private void Role_access()
+        {
+            Login login = new Login();
+            if (login.login_role == "Student")
+            {
+                button1.Visible = false;
+                button2.Visible = false;
+                button3.Visible = false;
+
+            }
+            else if (login.login_role == "Lecturer")
+            {
+                button1.Visible = true;
+                button2.Visible = true;
+                button3.Visible = false;
+            }
+            else if (login.login_role == "staff" || login.login_role == "Admin")
+            {
+                button1.Visible = true;
+                button2.Visible = true;
+                button3.Visible = true;
+            }
+        }
+
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -211,6 +239,7 @@ namespace UnicomTIC_Management_System.Forms
 
         private void button3_Click(object sender, EventArgs e)
         {
+            
 
             var result = MessageBox.Show("Are you sure you want to delete this mark?", "Confirm", MessageBoxButtons.YesNo);
             if (result != DialogResult.Yes) return;

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UnicomTIC_Management_System.Controller;
+using UnicomTIC_Management_System.Data.log_session;
 using UnicomTIC_Management_System.Model;
 using UnicomTIC_Management_System.Service;
 
@@ -52,6 +53,8 @@ namespace UnicomTIC_Management_System.Forms
             label7.Text = string.Empty;
 
         }
+
+
 
         private void get_STaff_info()                               //.............DGV Method ............
         {
@@ -151,6 +154,13 @@ namespace UnicomTIC_Management_System.Forms
 
             if (comboBox1.Text == "Delete")
             {
+                Login_info login_Info = new Login_info();
+                if (!PermissionManager.HasPermission(login_Info.login_role, "Delete", "Staff"))
+                {
+                    MessageBox.Show("You do not have permission to delete from Staff.");
+                    return;
+                }
+
                 if (string.IsNullOrWhiteSpace(textBox1.Text) || string.IsNullOrWhiteSpace(textBox2.Text) || string.IsNullOrWhiteSpace(textBox3.Text))
                 {
                     MessageBox.Show("Please fill in all fields before updating.");
@@ -205,6 +215,34 @@ namespace UnicomTIC_Management_System.Forms
                 get_STaff_info();
             }
             
+        }
+
+        private void Role_access()
+        {
+            Login login = new Login();
+            if (login.login_role == "Student")
+            {
+                comboBox1.Visible = false;
+
+            }
+            else if (login.login_role == "Lecturer")
+            {
+                comboBox1.Visible = false;
+
+            }
+            else if (login.login_role == "staff" )
+            {
+                comboBox1.Visible = false;
+
+            }
+            else if (login.login_role == "Admin")
+            {
+                comboBox1.Visible = true;
+            }
+            else
+            {
+                MessageBox.Show("Unknown role detected. Please contact support.");
+            }
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

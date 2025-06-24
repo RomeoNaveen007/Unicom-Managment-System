@@ -4,13 +4,15 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using UnicomTIC_Management_System.Data.log_session;
 using UnicomTIC_Management_System.Model;
 using UnicomTIC_Management_System.Service;
-using System.Reflection.Emit;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolBar;
 
 namespace UnicomTIC_Management_System.Forms
 {
@@ -24,6 +26,35 @@ namespace UnicomTIC_Management_System.Forms
         {
             InitializeComponent();
             Get_Batch_Info();
+        }
+
+        private void Role_access()
+        {
+            Login login = new Login();
+            if (login.login_role == "Student")
+            {
+                comboBox2.Visible = false;
+
+            }
+            else if (login.login_role == "Lecturer")
+            {
+                comboBox2.Visible = false;
+
+            }
+            else if (login.login_role == "staff")
+            {
+                comboBox2.Visible = true;
+
+            }
+            else if (login.login_role == "Admin")
+            {
+                comboBox2.Visible = true;
+            }
+            else
+            {
+                MessageBox.Show("Unknown role detected. Please contact support.");
+
+            }
         }
 
         private string CapitalizeFirstLetter(string input)

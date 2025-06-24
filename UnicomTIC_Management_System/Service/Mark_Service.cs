@@ -186,7 +186,6 @@ namespace UnicomTIC_Management_System.Service
             var table = new DataTable();
             using (var conn = DB_Config.getConnection())
             {
-                conn.Open();
                 string query = @"
             SELECT 
                 m.Exam_ID, e.Exam_type,
@@ -211,7 +210,6 @@ namespace UnicomTIC_Management_System.Service
         {
             using (var conn = DB_Config.getConnection())
             {
-                conn.Open();
                 string query = "UPDATE Marks SET Score = @Score WHERE Exam_ID = @ExamID AND Student_ID = @StudentID";
                 using (var cmd = new SQLiteCommand(query, conn))
                 {
@@ -227,7 +225,6 @@ namespace UnicomTIC_Management_System.Service
         {
             using (var conn = DB_Config.getConnection())
             {
-                conn.Open();
                 string query = "DELETE FROM Marks WHERE Exam_ID = @ExamID AND Student_ID = @StudentID";
                 using (var cmd = new SQLiteCommand(query, conn))
                 {

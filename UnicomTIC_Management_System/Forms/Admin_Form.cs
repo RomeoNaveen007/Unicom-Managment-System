@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using UnicomTIC_Management_System;
 using UnicomTIC_Management_System.Controller;
 using UnicomTIC_Management_System.Data.DB_Connection;
+using UnicomTIC_Management_System.Data.log_session;
 using UnicomTIC_Management_System.Model;
 using UnicomTIC_Management_System.Service;
 
@@ -178,6 +179,7 @@ namespace UnicomTIC_Management_System.Forms
 
             else if (comboBox1.Text == "Delete")
             {
+
                 if (string.IsNullOrWhiteSpace(textBox1.Text) || string.IsNullOrWhiteSpace(textBox2.Text) || string.IsNullOrWhiteSpace(textBox3.Text))
                 {
                     MessageBox.Show("Please fill in all fields before deleting.");

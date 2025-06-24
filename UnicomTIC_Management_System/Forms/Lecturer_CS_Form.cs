@@ -7,8 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using UnicomTIC_Management_System.Service;
+using UnicomTIC_Management_System.Data.log_session;
 using UnicomTIC_Management_System.Model;
+using UnicomTIC_Management_System.Service;
 
 namespace UnicomTIC_Management_System.Forms
 {
@@ -32,6 +33,30 @@ namespace UnicomTIC_Management_System.Forms
             LoadLecturerNames();
             LoadMappings();
             ClearInputs();
+            Role_access(); 
+        }
+        private void Role_access()
+        {
+            Login login = new Login();
+            if (login.login_role == "Student")
+            {
+                button1.Visible = false;
+                button2.Visible = false;
+                button3.Visible = false;
+
+            }
+            else if (login.login_role == "Lecturer")
+            {
+                button1.Visible = false;
+                button2.Visible = false;
+                button3.Visible = false;
+            }
+            else if (login.login_role == "staff" || login.login_role == "Admin")
+            {
+                button1.Visible = true;
+                button2.Visible = true;
+                button3.Visible = true;
+            }
         }
         private void LoadMappings()
         {
@@ -202,6 +227,8 @@ namespace UnicomTIC_Management_System.Forms
 
         private void button3_Click(object sender, EventArgs e)
         {
+           
+
             try
             {
                 if (oldLecturerId <= 0 || oldCSId <= 0)

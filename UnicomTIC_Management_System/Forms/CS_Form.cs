@@ -8,6 +8,7 @@ using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UnicomTIC_Management_System.Data.log_session;
 using UnicomTIC_Management_System.Model;
 using UnicomTIC_Management_System.Service;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -25,11 +26,40 @@ namespace UnicomTIC_Management_System.Forms
             LoadCourseSubjectData();
             PopulateCourseComboBox();
             PopulateSubjectComboBox();
+            Role_access();
+
         }
 
         private void CS_Form_Load(object sender, EventArgs e)
         {
             
+        }
+        private void Role_access()
+        {
+            Login login = new Login();
+            if (login.login_role == "Student")
+            {
+                button1.Visible = false;
+                button2.Visible = false;
+                button3.Visible = false;
+
+            }
+            else if (login.login_role == "Lecturer")
+            {
+                button1.Visible = false;
+                button2.Visible = false;
+                button3.Visible = false;
+            }
+            else if (login.login_role == "staff" || login.login_role == "Admin")
+            {
+                button1.Visible = true;
+                button2.Visible = true;
+                button3.Visible = true;
+            }
+            else
+            {
+                MessageBox.Show("Unknown role detected. Please contact the administrator.");
+            }
         }
 
 
@@ -199,6 +229,7 @@ namespace UnicomTIC_Management_System.Forms
 
         private void button3_Click(object sender, EventArgs e)
         {
+          
             if (Clicked_CS_ID <= 0)
             {
                 MessageBox.Show("Select a Course-Subject entry to delete.");

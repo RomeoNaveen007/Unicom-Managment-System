@@ -7,9 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using UnicomTIC_Management_System.Data.log_session;
 using UnicomTIC_Management_System.Model;
 using UnicomTIC_Management_System.Service;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolBar;
 
 namespace UnicomTIC_Management_System.Forms
 {
@@ -22,6 +24,7 @@ namespace UnicomTIC_Management_System.Forms
         {
             InitializeComponent();
             Get_Lecturer_Info();
+            Role_access();
         }
 
         private string CapitalizeFirstLetter(string input)
@@ -32,6 +35,25 @@ namespace UnicomTIC_Management_System.Forms
             return char.ToUpper(input[0]) + input.Substring(1).ToLower();
         }
 
+        private void Role_access()
+        {
+            Login login = new Login();
+            if (login.login_role == "Student")
+            {
+                comboBox2.Visible = false;
+
+            }
+            else if (login.login_role == "Lecturer")
+            {
+                comboBox2.Visible = false;
+
+            }
+            else if (login.login_role == "staff" || login.login_role == "Admin")
+            {
+                comboBox2.Visible = true;
+
+            }
+        }
         private void ClearInputs()
         {
             textBox1.Text = ""; // Lecturer_Name
@@ -250,6 +272,7 @@ namespace UnicomTIC_Management_System.Forms
 
             if (comboBox2.Text == "Delete")
             {
+
                 if (Clicked_Lecturer_ID == -1)
                 {
                     MessageBox.Show("Please select a Lecturer from the list before deleting.");

@@ -144,8 +144,8 @@ namespace UnicomTIC_Management_System.Service
                 using (var conn = DB_Config.getConnection())
                 {
                     string query = @"
-                INSERT INTO Exam (Exam_type, Exam_Date, Exam_Duration, CS_ID, Batch_ID) 
-                VALUES (@Type, @Date, @Duration, @CS_ID, @Batch_ID)";
+                INSERT INTO Exam (Exam_type, Exam_Date, Exam_Duration, CS_ID, Batch_ID,Exam_Status) 
+                VALUES (@Type, @Date, @Duration, @CS_ID, @Batch_ID,@Exam_Status )";
 
                     using (var cmd = new SQLiteCommand(query, conn))
                     {
@@ -154,7 +154,7 @@ namespace UnicomTIC_Management_System.Service
                         cmd.Parameters.AddWithValue("@Duration", exam.Exam_Duration);
                         cmd.Parameters.AddWithValue("@CS_ID", exam.CS_ID);
                         cmd.Parameters.AddWithValue("@Batch_ID", exam.Batch_ID);
-
+                        cmd.Parameters.AddWithValue("@Status", exam.Exam_Status);
                         return cmd.ExecuteNonQuery() > 0;
                     }
                 }
@@ -166,7 +166,7 @@ namespace UnicomTIC_Management_System.Service
             }
         }
 
-        public DataTable GetAllExamsWithDetails()
+        public DataTable GetAllExamsWithDetails(bool includeInactive = false)
         {
             var table = new DataTable();
 
@@ -174,6 +174,7 @@ namespace UnicomTIC_Management_System.Service
             {
                 using (var conn = DB_Config.getConnection())
                 {
+                    conn.Open();
                     string query = @"
                 SELECT 
                     e.Exam_ID,
@@ -184,12 +185,16 @@ namespace UnicomTIC_Management_System.Service
                     s.Subject_Name,
                     b.Batch_Name,
                     e.CS_ID,
-                    e.Batch_ID
+                    e.Batch_ID,
+                    e.Exam_Status
                 FROM Exam e
                 LEFT JOIN Course_Subject cs ON e.CS_ID = cs.CS_ID
                 LEFT JOIN Course c ON cs.Course_ID = c.Course_ID
                 LEFT JOIN Subject s ON cs.Subject_ID = s.Subject_ID
                 LEFT JOIN Batch b ON e.Batch_ID = b.Batch_ID";
+
+                    if (!includeInactive)
+                        query += " WHERE e.Exam_Status = 'Active'";
 
                     using (var adapter = new SQLiteDataAdapter(query, conn))
                     {
@@ -204,6 +209,7 @@ namespace UnicomTIC_Management_System.Service
 
             return table;
         }
+
 
 
         public Exam GetExamById(int examId)
@@ -254,16 +260,17 @@ namespace UnicomTIC_Management_System.Service
             return null;
         }
 
-        public bool UpdateExam(Exam exam)
+        public bool UpdateExam(Exam updatedExam)
         {
             try
             {
                 using (var conn = DB_Config.getConnection())
                 {
+                    conn.Open();
                     string query = @"
-                UPDATE Exam
-                SET Exam_type = @Type,
-                    Exam_Date = @Date,
+                UPDATE Exam 
+                SET Exam_type = @Type, 
+                    Exam_Date = @Date, 
                     Exam_Duration = @Duration,
                     CS_ID = @CS_ID,
                     Batch_ID = @Batch_ID
@@ -271,12 +278,13 @@ namespace UnicomTIC_Management_System.Service
 
                     using (var cmd = new SQLiteCommand(query, conn))
                     {
-                        cmd.Parameters.AddWithValue("@Type", exam.Exam_type);
-                        cmd.Parameters.AddWithValue("@Date", exam.Exam_Date);
-                        cmd.Parameters.AddWithValue("@Duration", exam.Exam_Duration);
-                        cmd.Parameters.AddWithValue("@CS_ID", exam.CS_ID);
-                        cmd.Parameters.AddWithValue("@Batch_ID", exam.Batch_ID);
-                        cmd.Parameters.AddWithValue("@ExamID", exam.Exam_ID);
+                        cmd.Parameters.AddWithValue("@Type", updatedExam.Exam_type);
+                        cmd.Parameters.AddWithValue("@Date", updatedExam.Exam_Date);
+                        cmd.Parameters.AddWithValue("@Duration", updatedExam.Exam_Duration);
+                        cmd.Parameters.AddWithValue("@CS_ID", updatedExam.CS_ID);
+                        cmd.Parameters.AddWithValue("@Batch_ID", updatedExam.Batch_ID);
+                        cmd.Parameters.AddWithValue("@ExamID", updatedExam.Exam_ID);
+
                         return cmd.ExecuteNonQuery() > 0;
                     }
                 }
@@ -294,7 +302,8 @@ namespace UnicomTIC_Management_System.Service
             {
                 using (var conn = DB_Config.getConnection())
                 {
-                    string query = "DELETE FROM Exam WHERE Exam_ID = @ExamID";
+                    conn.Open();
+                    string query = "UPDATE Exam SET Exam_Status = 'Inactive' WHERE Exam_ID = @ExamID";
 
                     using (var cmd = new SQLiteCommand(query, conn))
                     {
@@ -305,7 +314,7 @@ namespace UnicomTIC_Management_System.Service
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error deleting exam: " + ex.Message);
+                MessageBox.Show("Error deactivating exam: " + ex.Message);
                 return false;
             }
         }
