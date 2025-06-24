@@ -26,6 +26,7 @@ namespace UnicomTIC_Management_System
             login_session = user;
 
             SetButtonVisibilityByRole(login_session.login_role);
+            button1.Visible = false;
             
         }
 
