@@ -26,27 +26,6 @@ namespace UnicomTIC_Management_System.Forms
         {
             InitializeComponent();
             Get_Course_Info();
-            Role_access();
-        }
-
-        private void Role_access()
-        {
-            Login login = new Login();
-            if (login.login_role == "Student")
-            {
-                comboBox1.Visible = false;
-
-
-            }
-            else if (login.login_role == "Lecturer")
-            {
-                comboBox1.Visible = false;
-            }
-            else if (login.login_role == "staff" || login.login_role == "Admin")
-            {
-                comboBox1.Visible = true;
-
-            }
         }
 
         private string CapitalizeFirstLetter(string input)
@@ -250,17 +229,17 @@ namespace UnicomTIC_Management_System.Forms
             if (comboBox1.Text == "Add")
             {
                 
-                Get_Course_Info();        // Refresh DataGridView
+                Get_Course_Info();        
             }
             else if (comboBox1.Text == "Update" || comboBox1.Text == "Delete")
             {
                
-                Get_Course_Info();        // Refresh DataGridView
+                Get_Course_Info();       
             }
             else if (string.IsNullOrEmpty(comboBox1.Text))
             {
                 
-                Get_Course_Info();        // Refresh DataGridView
+                Get_Course_Info();     
             }
         }
     }

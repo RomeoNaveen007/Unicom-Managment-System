@@ -7,10 +7,11 @@ using UnicomTIC_Management_System.Data.log_session;
 
 namespace UnicomTIC_Management_System.Model
 {
-    internal class Login: Login_info
+    internal class Login 
     {
+        public string Login_user { get; set; }
         public string Login_password { get; set; }
-
+        public string Login_role {  get; set; }
 
     }
 }

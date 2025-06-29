@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UnicomTIC_Management_System.Data.log_session;
 using UnicomTIC_Management_System.Model;
 using UnicomTIC_Management_System.Service;
 
@@ -14,6 +15,9 @@ namespace UnicomTIC_Management_System.Forms
 {
     public partial class Login_Form : Form
     {
+        private Login_Service login_Service;
+
+
         public Login_Form()
         {
             InitializeComponent();
@@ -27,12 +31,13 @@ namespace UnicomTIC_Management_System.Forms
 
         private void Login_Form_Load(object sender, EventArgs e)
         {
-            Login_Service login_Service = new Login_Service();
+            login_Service = new Login_Service();
             login_Service.EnsureDefaultAdmin();
         }
 
         private void Login_Click(object sender, EventArgs e)
         {
+            
             string username = textBox1.Text.Trim();
             string password = textBox2.Text.Trim();
 
@@ -50,17 +55,17 @@ namespace UnicomTIC_Management_System.Forms
                 {
                     User loggedUser = userService.GetUserByUsername(username);
 
-                    //  Create session info
-                    Login user = new Login
+                    Login current_user = new Login
                     {
                         Login_user = loggedUser.User_Name,
-                        login_role = loggedUser.Role
+                        Login_role = loggedUser.Role
                     };
+                    Login_info.Login_info_user = current_user.Login_user;
+                    Login_info.Login_info_role = current_user.Login_role;
 
                     MessageBox.Show($"Login successful! Welcome, {loggedUser.User_Name} ({loggedUser.Role})");
 
-                    // Launch main form with session
-                    MainForm main = new MainForm(user);
+                    MainForm main = new MainForm();
                     main.Show();
                     this.Hide();
                 }

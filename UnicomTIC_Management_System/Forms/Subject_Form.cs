@@ -23,7 +23,6 @@ namespace UnicomTIC_Management_System.Forms
         {
             InitializeComponent();
             Get_Subject_Info();
-            Role_access();
         }
        
         private string CapitalizeFirstLetter(string input)
@@ -33,25 +32,7 @@ namespace UnicomTIC_Management_System.Forms
 
             return char.ToUpper(input[0]) + input.Substring(1).ToLower();
         }
-        private void Role_access()
-        {
-            Login login = new Login();
-            if (login.login_role == "Student")
-            {
-                comboBox1.Visible = false;
-
-
-            }
-            else if (login.login_role == "Lecturer")
-            {
-                comboBox1.Visible = false;
-            }
-            else if (login.login_role == "staff" || login.login_role == "Admin")
-            {
-                comboBox1.Visible = true;
-
-            }
-        }
+    
         private void ClearInputs() 
         {
             comboBox1.Text = string.Empty;

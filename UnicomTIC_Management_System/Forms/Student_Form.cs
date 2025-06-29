@@ -21,33 +21,8 @@ namespace UnicomTIC_Management_System.Forms
         {
             InitializeComponent();
             LoadStudents();
-            Role_access();
 
         }
-        private void Role_access()
-        {
-            Login login = new Login();
-            if (login.login_role == "Student")
-            {
-                button1.Visible = false;
-                button2.Visible = false;
-                button3.Visible = false;
-
-            }
-            else if (login.login_role == "Lecturer")
-            {
-                button1.Visible = false;
-                button2.Visible = false ;
-                button3.Visible = false;
-            }
-            else if (login.login_role == "staff" || login.login_role == "Admin")
-            {
-                button1.Visible = true;
-                button2.Visible = true;
-                button3.Visible = true;
-            }
-        }//.........                comboBox1.Items.Remove("Update");
-
 
         private void Student_Form_Load(object sender, EventArgs e)
         {

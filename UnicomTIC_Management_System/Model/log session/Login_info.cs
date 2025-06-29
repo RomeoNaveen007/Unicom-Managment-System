@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace UnicomTIC_Management_System.Data.log_session
 {
-    internal class Login_info
+    public static class Login_info
     {
-        public string Login_user { get; set; }
-        public string login_role { get; set; }
+        public static string Login_info_user { get; set; }
+        public static string Login_info_role { get; set; }
 
     }
 }

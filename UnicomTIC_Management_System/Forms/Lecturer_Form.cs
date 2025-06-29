@@ -24,7 +24,6 @@ namespace UnicomTIC_Management_System.Forms
         {
             InitializeComponent();
             Get_Lecturer_Info();
-            Role_access();
         }
 
         private string CapitalizeFirstLetter(string input)
@@ -35,25 +34,6 @@ namespace UnicomTIC_Management_System.Forms
             return char.ToUpper(input[0]) + input.Substring(1).ToLower();
         }
 
-        private void Role_access()
-        {
-            Login login = new Login();
-            if (login.login_role == "Student")
-            {
-                comboBox2.Visible = false;
-
-            }
-            else if (login.login_role == "Lecturer")
-            {
-                comboBox2.Visible = false;
-
-            }
-            else if (login.login_role == "staff" || login.login_role == "Admin")
-            {
-                comboBox2.Visible = true;
-
-            }
-        }
         private void ClearInputs()
         {
             textBox1.Text = ""; // Lecturer_Name

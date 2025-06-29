@@ -17,107 +17,87 @@ namespace UnicomTIC_Management_System
 {
     public partial class MainForm : Form 
     {
-        private Login_info login_session;
-
-
-        public MainForm(Login_info user)
+        
+        public MainForm()
         {
             InitializeComponent();
-            login_session = user;
-
-            SetButtonVisibilityByRole(login_session.login_role);
-            button1.Visible = false;
-            
         }
 
-        private void SetButtonVisibilityByRole(string role)
+        private  void Button_Access()
         {
-            try
+            string Role = Login_info.Login_info_role;
+
+
+            button2.Visible = false;
+            button3.Visible = false;
+            button4.Visible = false;
+            button13.Visible = false;
+            button8.Visible = false;
+            button5.Visible = false;
+            button6.Visible = false;
+            button14.Visible = false;
+            button9.Visible = false;
+            button10.Visible = false;
+            button11.Visible = false;
+            button12.Visible = false;
+
+
+            switch (Role)
             {
-                HideAllButtonsExcept("button17");
 
-                switch (role)
-                {
-                    case "Admin":
-                        ShowAllButtons();
-                        break;
+                case "Admin":
+                    ShowAllButtons();
+                    break;
+                case "Staff":
 
-                    case "Staff":
-                        ShowButtonsInRange("button1", "button10");
-                        break;
+                    button2.Visible = true;
+                    button3.Visible = true;
+                    button4.Visible = true;
+                    button13.Visible = true;
+                    button8.Visible = true;
+                    button5.Visible = true;
+                    button6.Visible = true;
+                    button14.Visible = true;
+                    button9.Visible = true;
+                    break;
 
-                    case "Lecturer":
-                        ShowButtonsInRange("button1", "button5");
-                        break;
+                case "Lecturer":
+                    button2.Visible = true;
+                    button3.Visible = true;
+                    button4.Visible = true;
+                    button13.Visible = true;
+                    button8.Visible = true;
+                    break;
 
-                    case "Student":
-                        ShowButtonsInRange("button4", "button1"); // reverse order supported
-                        break;
+                case "Student":
+                    button2.Visible = true;
+                    button3.Visible = true;
+                    break;
 
-                    default:
-                        MessageBox.Show("Unknown role: access denied.");
-                        break;
-                }
+                default:
+                    MessageBox.Show("Role not recognized.");
+                    break;
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("UI error: " + ex.Message);
-            }
-        }
 
-        private void HideAllButtonsExcept(string exceptionName)
-        {
-            foreach (Control ctrl in this.Controls)
-            {
-                if (ctrl is Button btn && btn.Name != exceptionName)
-                    btn.Visible = false;
-            }
         }
 
         private void ShowAllButtons()
         {
-            foreach (Control ctrl in this.Controls)
-            {
-                if (ctrl is Button btn)
-                    btn.Visible = true;
-            }
+            button2.Visible = true;
+            button3.Visible = true;
+            button4.Visible = true;
+            button13.Visible = true;
+            button8.Visible = true;
+            button5.Visible = true;
+            button6.Visible = true;
+            button14.Visible = true;
+            button9.Visible = true;
+            button10.Visible = true;
+            button11.Visible = true;
+            button12.Visible = true;
         }
 
-        private void ShowButtonsInRange(string startBtn, string endBtn)
-        {
-            // Sort buttons alphabetically to ensure predictable order
-            var buttons = this.Controls.OfType<Button>()
-                .OrderBy(b => b.Name)
-                .ToList();
-
-            bool inRange = false;
-
-            foreach (var btn in buttons)
-            {
-                if (btn.Name == startBtn || btn.Name == endBtn)
-                {
-                    inRange = true;
-                    btn.Visible = true;
-
-                    if (startBtn == endBtn)
-                        break;
-
-                    continue;
-                }
-
-                if (inRange)
-                    btn.Visible = true;
-
-                // Exit when we’ve passed both
-                if ((btn.Name == endBtn && startBtn != endBtn) ||
-                    (btn.Name == startBtn && startBtn != endBtn))
-                {
-                    break;
-                }
-            }
-        }
-
-
+       
         private void OpenFormInPanel(Form OpenForm)
         {
             panel4.Controls.Clear();              // Remove previous form
@@ -201,7 +181,9 @@ namespace UnicomTIC_Management_System
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            label2.Text = $" Welcome {login_session.Login_user}  ";
+            label2.Text = $"Welcome to Unicom TIC {Login_info.Login_info_user}";
+            label2.ForeColor = Color.Gray;
+            Button_Access();
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)

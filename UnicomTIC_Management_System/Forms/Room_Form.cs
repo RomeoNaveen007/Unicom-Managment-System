@@ -26,39 +26,6 @@ namespace UnicomTIC_Management_System.Forms
             LoadRoomData();
         }
 
-        private void Role_access()
-        {
-            Login login = new Login();
-            if (login.login_role == "Student")
-            {
-                button1.Visible = false;
-                button2.Visible = false;
-                button3.Visible = false;
-            }
-            else if (login.login_role == "Lecturer")
-            {
-                button1.Visible = false;
-                button2.Visible = false;
-                button3.Visible = false;
-            }
-            else if (login.login_role == "staff")
-            {
-                button1.Visible = true;
-                button2.Visible = true;
-                button3.Visible = true;
-
-            }
-            else if (login.login_role == "Admin")
-            {
-                button1.Visible = true;
-                button2.Visible = true;
-                button3.Visible = true;
-            }
-            else
-            {
-                MessageBox.Show("Unknown role detected. Please contact support.");
-            }
-        }
         private void Roomtype()
         {
             comboBox1.Items.Add("Lecturer Hall");

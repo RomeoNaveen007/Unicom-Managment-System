@@ -182,7 +182,6 @@
     <Compile Include="Model\Login.cs" />
     <Compile Include="Model\Log_Table.cs" />
     <Compile Include="Model\Mark.cs" />
-    <Compile Include="Model\PermissionManager.cs" />
     <Compile Include="Model\Room.cs" />
     <Compile Include="Model\Staff.cs" />
     <Compile Include="Model\Staff_Attendence.cs" />

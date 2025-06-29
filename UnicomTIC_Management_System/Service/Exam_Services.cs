@@ -154,7 +154,7 @@ namespace UnicomTIC_Management_System.Service
                         cmd.Parameters.AddWithValue("@Duration", exam.Exam_Duration);
                         cmd.Parameters.AddWithValue("@CS_ID", exam.CS_ID);
                         cmd.Parameters.AddWithValue("@Batch_ID", exam.Batch_ID);
-                        cmd.Parameters.AddWithValue("@Status", exam.Exam_Status);
+                        cmd.Parameters.AddWithValue("@Exam_Status", exam.Exam_Status);
                         return cmd.ExecuteNonQuery() > 0;
                     }
                 }
@@ -174,7 +174,7 @@ namespace UnicomTIC_Management_System.Service
             {
                 using (var conn = DB_Config.getConnection())
                 {
-                    conn.Open();
+                   
                     string query = @"
                 SELECT 
                     e.Exam_ID,
@@ -266,7 +266,6 @@ namespace UnicomTIC_Management_System.Service
             {
                 using (var conn = DB_Config.getConnection())
                 {
-                    conn.Open();
                     string query = @"
                 UPDATE Exam 
                 SET Exam_type = @Type, 
@@ -302,7 +301,6 @@ namespace UnicomTIC_Management_System.Service
             {
                 using (var conn = DB_Config.getConnection())
                 {
-                    conn.Open();
                     string query = "UPDATE Exam SET Exam_Status = 'Inactive' WHERE Exam_ID = @ExamID";
 
                     using (var cmd = new SQLiteCommand(query, conn))

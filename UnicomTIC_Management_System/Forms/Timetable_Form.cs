@@ -17,48 +17,7 @@ namespace UnicomTIC_Management_System.Forms
         {
             InitializeComponent();
         }
-/*
-        private bool HasPermission(string action, string table)
-        {
-            try
-            {
-                Login_info loggedUser = new Login_info();
-                
-                switch (loggedUser.login_role)
-                {
-                    case "Admin":
-                        return true;
 
-                    case "Staff":
-                        if (table == "Staff" && (action == "Add" || action == "Update" || action == "Delete"))
-                            return false;
-                        return true;
-
-                    case "Lecturer":
-                        if (table == "Marks")
-                            return true;
-                        return action == "View";
-
-                    case "Student":
-                        return action == "View";
-
-                    default:
-                        return false;
-                }
-            
-            }
-            catch
-            {
-                MessageBox.Show("Access control failure.");
-                return false;
-            }
-        }*/
-
-        /* if (!HasPermission("Delete", "Staff"))   ..................used in delete function ............................
-         {
-             MessageBox.Show("You do not have permission to delete from Staff.");
-             return;
-         }*/
 
     }
 }

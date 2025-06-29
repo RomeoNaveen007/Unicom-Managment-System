@@ -32,6 +32,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.button15 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button17 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
@@ -42,15 +44,12 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.button17 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -93,13 +92,33 @@
             this.panel2.Controls.Add(this.button4);
             this.panel2.Controls.Add(this.button3);
             this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.button1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 30);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(200, 570);
             this.panel2.TabIndex = 1;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(34, 253);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(124, 23);
+            this.button5.TabIndex = 32;
+            this.button5.Text = "Subject";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click_1);
+            // 
+            // button17
+            // 
+            this.button17.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button17.Location = new System.Drawing.Point(38, 517);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(128, 28);
+            this.button17.TabIndex = 31;
+            this.button17.Text = "Log out ";
+            this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.button17_Click);
             // 
             // button12
             // 
@@ -201,16 +220,6 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(34, 76);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(124, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "TimeTable";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // panel5
             // 
             this.panel5.Controls.Add(this.label2);
@@ -221,6 +230,15 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(600, 70);
             this.panel5.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.Location = new System.Drawing.Point(6, 36);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(394, 31);
+            this.label2.TabIndex = 0;
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // pictureBox1
             // 
@@ -251,17 +269,6 @@
             this.panel4.TabIndex = 5;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
-            // button17
-            // 
-            this.button17.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button17.Location = new System.Drawing.Point(38, 517);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(128, 28);
-            this.button17.TabIndex = 31;
-            this.button17.Text = "Log out ";
-            this.button17.UseVisualStyleBackColor = true;
-            this.button17.Click += new System.EventHandler(this.button17_Click);
-            // 
             // button6
             // 
             this.button6.Location = new System.Drawing.Point(34, 282);
@@ -271,25 +278,6 @@
             this.button6.Text = "Course";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click_1);
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(34, 253);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(124, 23);
-            this.button5.TabIndex = 32;
-            this.button5.Text = "Subject";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click_1);
-            // 
-            // label2
-            // 
-            this.label2.Location = new System.Drawing.Point(40, 36);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(330, 31);
-            this.label2.TabIndex = 0;
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // MainForm
             // 
@@ -322,7 +310,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel4;
@@ -333,9 +320,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button17;
-        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button6;
     }
 }
 

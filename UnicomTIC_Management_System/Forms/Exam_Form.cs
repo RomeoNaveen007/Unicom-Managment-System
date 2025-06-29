@@ -22,41 +22,16 @@ namespace UnicomTIC_Management_System.Forms
         public Exam_Form()
         {
             InitializeComponent();
-            Role_access();
-            LoadExams();
         }
         private void Exam_Form_Load(object sender, EventArgs e)
         {
-            Role_access();
+            LoadExams();
             LoadCourses();
             LoadDurations();
             LoadBatchNames();
            
         }
 
-        private void Role_access() 
-        {
-            Login login = new Login();
-            if (login.login_role=="Student")
-            {
-                button1.Visible = false;
-                button2.Visible = false;
-                button3.Visible = false;
-
-            }
-            else if (login.login_role == "Lecturer")
-            {
-                button1.Visible = true;
-                button2.Visible = true;
-                button3.Visible = false;
-            }
-            else if (login.login_role == "staff"|| login.login_role == "Admin")
-            {
-                button1.Visible = true;
-                button2.Visible = true;
-                button3.Visible = true;
-            }
-        }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
@@ -332,7 +307,7 @@ namespace UnicomTIC_Management_System.Forms
 
                 if (deleted)
                 {
-                    MessageBox.Show("Exam marked as inactive.");
+                    MessageBox.Show("Exam Canceled.");
                     LoadExams();
                     ClearExamFields();
                 }

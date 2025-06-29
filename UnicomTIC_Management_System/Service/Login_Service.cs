@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UnicomTIC_Management_System.Data.DB_Connection;
+using UnicomTIC_Management_System.Data.log_session;
 using UnicomTIC_Management_System.Model;
 
 
@@ -14,6 +15,19 @@ namespace UnicomTIC_Management_System.Service
 {
     internal class Login_Service
     {
+        public Login_Service()
+        {
+            set_Login_info_role();
+        }
+        public void set_Login_info_role()
+        {
+            Login login = new Login();
+            Login_info.Login_info_user = login.Login_role;
+            Login_info.Login_info_role = login.Login_role;
+
+        }
+
+
         public void EnsureDefaultAdmin()
         {
             try
@@ -71,7 +85,7 @@ namespace UnicomTIC_Management_System.Service
                                 {
                                     Login_user = reader["Login_user"].ToString(),
                                     Login_password = reader["Login_password"].ToString(),
-                                    login_role = reader["login_role"].ToString()
+                                    Login_role = reader["login_role"].ToString()
                                 };
                             }
                         }
